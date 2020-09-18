@@ -6,6 +6,7 @@ const initialState = {
   user: null,
   token: null,
   loading:false,
+
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -18,7 +19,7 @@ const reducer = (state, action) => {
       return { ...state, isLoggedIn: true, user: action.payload.user ,loading:false};
     case "LogOut":
     case "LOGIN_FAIL":
-      return { ...state, isLoggedIn: false, user: null, token: null };
+      return { ...state, isLoggedIn: false, user: null, token: null ,loading:false};
     
 
     default:

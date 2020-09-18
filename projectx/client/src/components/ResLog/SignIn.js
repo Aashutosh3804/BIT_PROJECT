@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Axios from 'axios'
 import {AuthContext} from '../../context/auth'
@@ -12,6 +12,7 @@ const SignIn = (props) => {
     usn: "",
   
 };
+const [err,setError]=useState([]);
 const {state,dispatch}=useContext(AuthContext);
 
 const onSubmit=async ({usn,password})=>{
@@ -34,12 +35,24 @@ const onSubmit=async ({usn,password})=>{
     }
   })
 }
-  catch(err){
-    console.log(err.response.data);
+  catch(error){
+    console.log(error.response.data);
+    dispatch({
+      type:"LOGIN_FAIL",
+    })
+    setError(error.response.data.errors);
+    
+
   }
 
 }
-
+let err_jsx;
+if(err.length>0){
+  err.forEach(er=> setTimeout(()=>setError(err.splice(1)),3000));
+  
+  err_jsx=err.map(er=>{
+    return <h4 style={{color:"red"}} key="sd">{er.message}</h4>})
+}
   
 
 
@@ -71,6 +84,7 @@ const onSubmit=async ({usn,password})=>{
   let  jsx=(!state.loading)?
     <form onSubmit={formik.handleSubmit}>
       <h1>Sign in</h1>
+      {err_jsx}
 
       <span>or use your account</span>
       <input
