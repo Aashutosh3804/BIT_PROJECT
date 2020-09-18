@@ -1,12 +1,14 @@
-import React,{useContext, useEffect} from "react";
+import React,{useContext, useEffect,useState} from "react";
 import { useFormik } from "formik";
 import Axios from "axios";
 import { AuthContext } from "../../context/auth";
 
 const SignUp = (props) => {
   const {state,dispatch}=useContext(AuthContext);
+  const [err,setError]=useState([]);
+
  const onSubmit=async(values)=>{
-   console.log(JSON.stringify({...values,usn:values.usn.toLowerCase()}))
+   try{
       const res=await Axios.post("/getSignup",JSON.stringify({...values,usn:values.usn.toLowerCase()}),{
         headers: {
           "Content-Type": "application/json",
@@ -18,6 +20,13 @@ const SignUp = (props) => {
           user:res.data.user
         }
       })
+    }
+    catch(error){
+      dispatch({
+        type:"LOGIN_FAIL",
+      })
+      setError(error.response.data.errors);
+    }
   }
   
   const formik = useFormik({
@@ -73,12 +82,24 @@ const SignUp = (props) => {
     
     
   }, [props,state])
+  let err_jsx;
+if(err.length>0){
+  
+  err_jsx=err.map(er=>{
+    return <h4 style={{color:"red"}} key="sd">{er.message}</h4>})
+    err.forEach(er=> setTimeout(()=>setError(err.splice(1)),4000));
+
+}
   return (
     <form onSubmit={formik.handleSubmit}>
       <h1>Create Account</h1>
 
 
       <span>or use your email for registration</span>
+      <div>
+      {err_jsx}
+
+      </div>
       
      
       <input
