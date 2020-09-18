@@ -19,7 +19,6 @@ exports.signup =async  (req, response) => {
     if(user.length>0){
         return response.status(500).json({errors:[{message:"User Already Exists"}]})
 
-        return response.status(500).json({errors:[{message:"User Already Exists"}]})
     }
     const hashPassword=await bcrypt.hash(password,saltRounds);
      sql = `insert into studentInfo values ("${name}", "${usn}", "${email}","${hashPassword}","${year}","${section}","${batch}") `;
