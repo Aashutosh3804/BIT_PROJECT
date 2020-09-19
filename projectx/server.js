@@ -9,13 +9,14 @@ const path = require('path')
 const app = express();
 
 app.use(express.json({ extended: false }));
-
-app.use(express.static(path.join(__dirname, 'static')))
 (async()=>{
     await db.query('select *from studentInfo');
     console.log("db connected")
 
 })()
+
+app.use(express.static(path.join(__dirname, 'static')))
+
 
 
 app.post('/getLogin', signIn.signin)
