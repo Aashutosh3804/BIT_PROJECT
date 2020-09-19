@@ -4,18 +4,18 @@ const timetable = require('./controllers/timetable')
 const db=require('./db')
 const express = require('express')
 const path = require('path')
-// const bodyParser = require('body-parser')
-const bodyParser = require("body-parser");
+
 
 const app = express();
 
 app.use(express.json({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'static')))
-// (async=()=>{
-//     await db.query('select *from studentInfo');
+(async()=>{
+    await db.query('select *from studentInfo');
+    console.log("db connected")
 
-// })()
+})()
 
 
 app.post('/getLogin', signIn.signin)
