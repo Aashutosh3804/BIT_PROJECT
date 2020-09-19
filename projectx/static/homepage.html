@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Project</title>
+</head>
+
+<body>
+    <h3>Server is ready. Make a good website. :D</h3>
+    <button type="button" onclick="getinfo()">See full timetable</button>
+    <button type="button" onclick="getMonday()">Monday</button>
+    <button type="button" onclick="getTuesday()">Tuesdau</button>
+    <button type="button" onclick="getWednesday()">Wednesday</button>
+    <button type="button" onclick="getThursday()">Thursday</button>
+    <button type="button" onclick="getFriday()">Friday</button>
+    <button type="button" onclick="getSaturday()">Saturday</button>
+
+    <!-- <div id="teacher data"></div> -->
+</body>
+
+
+<script>
+    function getinfo() {
+        fetch("/homepage.html/timeTable").then((res) => {
+            res.json().then((data) => {
+                timetable = data;
+                console.log(data)
+            });
+        });
+    }
+
+</script>
+
+</html>
