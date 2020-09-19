@@ -48,7 +48,7 @@ const onSubmit=async ({usn,password})=>{
 }
 let err_jsx;
 if(err.length>0){
-  err.forEach(er=> setTimeout(()=>setError(err.splice(1)),3000));
+  err.forEach((err,idx)=> setTimeout(()=>setError(err.splice(1)),3000+idx*500));
   
   err_jsx=err.map(er=>{
     return <h4 style={{color:"red"}} key="sd">{er.message}</h4>})
