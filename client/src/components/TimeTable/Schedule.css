@@ -1,7 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
-body {
-  background: #e3e3e3;
+
+.carousel .slide {
+  background-color: white;
+}
+/* p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  top: 27px;
+  padding: 10px 0px 10px 0px;
+  position: relative;
+} */
+/* body {
+  background: linear-gradient(90deg, #cc2b56 0%, #753e88 100%);
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  align-content: center;
 }
 strong {
   font-weight: 600;
@@ -12,10 +30,15 @@ h1 {
   color: #333333;
   font-weight: 100;
   font-size: 2.4em;
-}
+} */
 #content {
   margin-top: 50px;
   text-align: center;
+  position: relative;
+  left: 8%;
+
+  max-width: 700px;
+  width: 100%;
 }
 /* Timeline */
 .timeline {
@@ -30,6 +53,8 @@ h1 {
   position: relative;
   line-height: 1.4em;
   font-size: 1.03em;
+  height: 100%;
+
   padding: 30px;
   list-style: none;
   text-align: left;
@@ -43,10 +68,20 @@ h1 {
   letter-spacing: 1.5px;
   font-weight: 100;
   font-size: 1.4em;
+  font-weight: bold;
+}
+.timeline h3 {
+  text-align: center;
 }
 .timeline .event {
   border-bottom: 1px dashed #4298c3;
   padding-bottom: 25px;
+
+  border-radius: 10px;
+  height: 150px;
+  min-width: 100px;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   margin-bottom: 50px;
   position: relative;
 }
@@ -58,12 +93,19 @@ h1 {
 .timeline .event:before,
 .timeline .event:after {
   position: absolute;
+
   display: block;
+
   top: 0;
 }
 .timeline .event:before {
-  left: -217.5px;
-  color: #717171;
+  left: -0.5px;
+  top: 28px;
+  background-color: #4298c3;
+  color: white;
+
+  margin-top: 8px;
+  padding: 2px 8px 2px 8px;
   content: attr(data-date);
   text-align: right;
   font-weight: 400;
@@ -86,6 +128,7 @@ h1 {
     top: 28px;
     background-color: #4298c3;
     color: white;
+
     margin-top: 8px;
     padding: 2px 8px 2px 8px;
     content: attr(data-date);
