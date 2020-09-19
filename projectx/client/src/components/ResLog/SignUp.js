@@ -41,6 +41,7 @@ const SignUp = (props) => {
       confirm: "",
     },
     onSubmit,
+    validateOnChange:true,
    
     validate:values=>{
       let errors={}
@@ -176,6 +177,7 @@ if(err.length>0){
         value={formik.values.confirm}
         className={(formik.touched.confirm&&formik.errors.confirm)?"error":null}
       />
+       {formik.touched.confirm&&formik.errors.confirm?<h4 style={{color:"red"}}>Password Dont Match</h4>:null}
 
 
       <button type="submit">Sign Up</button>
