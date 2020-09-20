@@ -1,11 +1,25 @@
-exports.verifyToken = (req, res, next)=> {
-    const bearerHeader = req.headers['authorization']
+const jwt = require('jsonwebtoken')
+
+
+exports.verifyToken = async (req, res, next)=> {
+    try{
+        const bearerHeader = req.headers['authorization']
     if (typeof bearerHeader !== 'undefined') {
         const bearer = bearerHeader.split(' ')
         const bearerToken = bearer[1];
-        req.token = bearerToken;
+        console.log(bearerToken)
+       
+        let authData =  await jwt.verify(bearerToken, 'secretkey')
+        req.user = authData.usn
+    
         next()
     } else {
-        res.sendStatus(403)
+        console.log("aashutosh")
+        res.status(403).json({errors:[{message:'authorisation failed'}]})
     }
+    }catch(err){
+        res.status(403).json({errors:[{message:'authorisation failed'}]})
+
+    }
+    
 }
