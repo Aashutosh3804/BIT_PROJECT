@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import SignUp from "./SignUp";
-import SignIn from './SignIn'
+import SignIn from "./SignIn";
 import "./ResLog.css";
-
-
 
 export default function ResLog() {
   const [WebAni, setWebAni] = useState(false);
@@ -32,8 +30,8 @@ export default function ResLog() {
   return (
     <div className="main-container">
       <div
-        className={!WebAni ? "container" : "container right-panel-active"}
-        id="container"
+        className={!WebAni ? "containerone" : "container right-panel-active"}
+        id="containerone"
       >
         <div
           className={
@@ -52,7 +50,6 @@ export default function ResLog() {
           }
         >
           <SignIn onMobAniSignUp={onMobAniSignUp}></SignIn>
-          
         </div>
         <div className="overlay-container">
           <div className="overlay">
@@ -68,7 +65,7 @@ export default function ResLog() {
             <div className="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp" onClick={onWebAni} >
+              <button className="ghost" id="signUp" onClick={onWebAni}>
                 Sign Up
               </button>
             </div>
