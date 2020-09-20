@@ -28,7 +28,7 @@ const SignIn = (props) => {
       dispatch({
         type: "Login",
         payload: {
-          user: res.data.user,
+          token: res.data.token,
         },
       });
     } catch (error) {
@@ -45,7 +45,7 @@ const SignIn = (props) => {
 
     err_jsx = err.map((er) => {
       return (
-        <h4 style={{ color: "red" }} key="sd">
+        <h4 style={{ color: "red" }} key='sd'>
           {er.message}
         </h4>
       );
@@ -81,45 +81,45 @@ const SignIn = (props) => {
 
       <span>or use your account</span>
       <input
-        type="text"
+        type='text'
         placeholder={
           !(formik.touched.usn && formik.errors.usn) ? "USN" : formik.errors.usn
         }
-        name="usn"
+        name='usn'
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
         value={formik.values.usn}
         className={formik.touched.usn && formik.errors.usn ? "error" : null}
       />
       <input
-        type="password"
+        type='password'
         onBlur={formik.handleBlur}
         placeholder={
           !(formik.touched.password && formik.errors.password)
             ? "Password"
             : formik.errors.password
         }
-        name="password"
+        name='password'
         onChange={formik.handleChange}
         value={formik.values.password}
         className={
           formik.touched.password && formik.errors.password ? "error" : null
         }
       />
-      <a href="/">Forgot your password?</a>
-      <button type="submit">Sign In</button>
-      <button id="new" onClick={props.onMobAniSignUp} type="button">
+      <a href='/'>Forgot your password?</a>
+      <button type='submit'>Sign In</button>
+      <button id='new' onClick={props.onMobAniSignUp} type='button'>
         SignUp
       </button>
     </form>
   ) : (
     <div style={{ position: "relative", left: "45%", top: "40%" }}>
-      <Spinner animation="border" variant="primary" size="ml" />
+      <Spinner animation='border' variant='primary' size='ml' />
     </div>
   );
 
   if (state.isLoggedIn) {
-    jsx = <Redirect to="/" />;
+    jsx = <Redirect to='/' />;
   }
 
   return <>{jsx}</>;

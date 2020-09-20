@@ -18,40 +18,40 @@ export default function Routine() {
   //const currenttime = "9";
   var currentday = "monday";
   const currentdaynum = today.getUTCDay();
-  if (currentdaynum == 0) {
+  if (currentdaynum === 0) {
     currentday = "sunday";
   }
-  if (currentdaynum == 1) {
+  if (currentdaynum === 1) {
     currentday = "monday";
   }
-  if (currentdaynum == 2) {
+  if (currentdaynum === 2) {
     currentday = "tuesday";
   }
-  if (currentdaynum == 3) {
+  if (currentdaynum === 3) {
     currentday = "wednesday";
   }
-  if (currentdaynum == 4) {
+  if (currentdaynum === 4) {
     currentday = "thursday";
   }
-  if (currentdaynum == 5) {
+  if (currentdaynum === 5) {
     currentday = "friday";
   }
-  if (currentdaynum == 6) {
+  if (currentdaynum === 6) {
     currentday = "saturday";
   }
 
   console.log(currentday);
 
   if (Object.keys(t).length < 1) {
-    return <div>sasa</div>;
+    return <div></div>;
   } else {
     return t
-      .filter((day) => day.day === currentday)
+      .filter((day) => day.day === "monday")
       .filter((day) => day.subject !== null)
       .map((day) => {
         return (
           <Carousel.Item>
-            <div className="routine_item">
+            <div className='routine_item'>
               <u style={{ color: "orange" }}>
                 <h4 style={{ color: "orange" }}>{day.time}</h4>
                 {/* <Badge pill variant="warning">

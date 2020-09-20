@@ -11,14 +11,41 @@ import {
 } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import Mycontext from "./context/context";
+import setHeader from "./util/setHeader";
+import AttendanceDiv from "./components/Attendence/AttendanceDiv";
+import Header from "./components/Home/Header";
+
+if (localStorage.token) {
+  setHeader(localStorage.token);
+}
 
 function App() {
-  const { state } = useContext(AuthContext);
+  const { state, dispatch } = useContext(AuthContext);
+  useEffect(() => {
+    const res = async () => {
+      try {
+        const result = await axios.get("/getUser");
+        console.log(result);
+        dispatch({
+          type: "User_Loaded",
+          payload: {
+            user: result.data[0],
+          },
+        });
+      } catch (err) {
+        dispatch({
+          type: "LOGIN_FAIL",
+        });
+      }
+    };
+    res();
+  }, []);
   useEffect(() => {
     const res = async () => {
       const response = await axios.get("/timetable");
 
       settimetable(response.data);
+
       //console.log(response.data);
     };
     res();
@@ -27,17 +54,25 @@ function App() {
 
   return (
     <Router>
-      <Mycontext.Provider value={timetable}>
-        <Route path="/login" component={ResLog} />
+      {!state.loading ? (
+        <Mycontext.Provider value={timetable}>
+          <Route path='/login' component={ResLog} />
 
-        {state.isLoggedIn ? (
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-          </Switch>
-        ) : (
-          <Redirect to="/login" />
-        )}
-      </Mycontext.Provider>
+          {state.isLoggedIn ? (
+            <>
+              <Header />
+              <Switch>
+                <Route path='/' exact component={HomePage} />
+                <Route path='/attendance' exact component={AttendanceDiv} />
+              </Switch>
+            </>
+          ) : (
+            <Redirect to='/login' />
+          )}
+        </Mycontext.Provider>
+      ) : (
+        <></>
+      )}
     </Router>
   );
 }

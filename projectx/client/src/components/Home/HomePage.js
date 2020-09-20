@@ -4,7 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from "./Header";
 import Routine from "./Routine";
 import FooterPage from "./Footer";
 
@@ -16,7 +15,6 @@ export default function HomePage() {
   };
   return (
     <div>
-      {Header()}
       <div>
         <Carousel activeIndex={index} onSelect={handleSelect}>
           {Routine()}
