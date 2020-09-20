@@ -1,0 +1,12 @@
+#attendanceDivKaBaap{
+
+    margin: 5%;
+    position: absolute;
+    overflow:auto;
+    padding: 5%;
+}
+@media screen and (max-width:600px){
+    #attendanceDivKaBaap{
+        margin: 10%;
+    }
+}
