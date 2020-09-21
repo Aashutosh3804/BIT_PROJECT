@@ -1,12 +1,22 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Mycontext } from "../../context/context";
+import axios from "axios";
 import "./Schedule.css";
 
 export default function Schedule(props) {
-  const { timetable } = useContext(Mycontext);
-  console.log(timetable);
+  const { timetable, settimetable } = useContext(Mycontext);
+  useEffect(() => {
+    const res = async () => {
+      const response = await axios.get("/timetable");
+
+      settimetable(response.data);
+    };
+    if (Object.keys(timetable).length < 1) {
+      console.log("time");
+      res();
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const subject = (sub) => {
-    console.log(sub);
     if (sub.includes("LAB")) {
       return (
         <h4
@@ -33,7 +43,6 @@ export default function Schedule(props) {
       return timetable
         .filter((day) => day.day === props.day)
         .map((day) => {
-          console.log(day);
           if (
             day.subject === "nul" ||
             day.subject === "null" ||
@@ -42,7 +51,7 @@ export default function Schedule(props) {
             return <div></div>;
           } else {
             return (
-              <li className="event" data-date={day.time}>
+              <li className='event' data-date={day.time}>
                 {subject(day.subject)}
                 {/* <h3 >{day.subject}</h3> */}
                 <p>{day.room}</p>
@@ -54,10 +63,10 @@ export default function Schedule(props) {
   };
 
   return (
-    <div id="content">
+    <div id='content'>
       <h1>{props.day.toUpperCase()}</h1>
 
-      <ul className="timeline">{data()}</ul>
+      <ul className='timeline'>{data()}</ul>
     </div>
   );
 }

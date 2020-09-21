@@ -48,7 +48,7 @@ const SignIn = (props) => {
 
   useEffect(() => {
     formik.resetForm();
-  }, [props, state]);
+  }, [props]); // eslint-disable-line react-hooks/exhaustive-deps
   let jsx = !state.loading ? (
     <form onSubmit={formik.handleSubmit} className={ResStyle.form}>
       <h1 className={ResStyle.h1}>Sign in</h1>

@@ -3,7 +3,6 @@ import "./Faculty.css";
 import axios from "axios";
 import { Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styled from "styled-components";
 export default function Faculty() {
   const [teachers, setteachers] = useState();
   useEffect(() => {
@@ -24,8 +23,8 @@ export default function Faculty() {
     } else {
       return (
         <>
-          <a className="header">Publications:&nbsp;&nbsp;&nbsp;</a>
-          <a className="header">{p}</a>
+          <a className='header'>Publications:&nbsp;&nbsp;&nbsp;</a>
+          <a className='header'>{p}</a>
           <br />
         </>
       );
@@ -68,7 +67,7 @@ export default function Faculty() {
             <h5>Experience:&nbsp;&nbsp;{teacher.experience}</h5>
             <h5>Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}</h5>
 
-            <a className="header">Emailid:&nbsp;{teacher.emailid}</a>
+            <a className='header'>Emailid:&nbsp;{teacher.emailid}</a>
             <h5>{publications(teacher.publications)}</h5>
           </div>
         </div>

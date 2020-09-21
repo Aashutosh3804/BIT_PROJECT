@@ -59,7 +59,7 @@ const SignUp = (props) => {
   });
   useEffect(() => {
     formik.resetForm();
-  }, [props, state]);
+  }, [props]); // eslint-disable-line react-hooks/exhaustive-deps
   let err_jsx;
   if (state.error.length > 0) {
     err_jsx = state.error.map((er) => {

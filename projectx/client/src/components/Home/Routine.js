@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,7 +16,7 @@ export default function Routine() {
   const today = new Date();
   // const currenttime = today.getHours();
   //const currenttime = "9";
-  var currentday = "monday";
+  let currentday = "monday";
   const currentdaynum = today.getUTCDay();
   if (currentdaynum === 0) {
     currentday = "sunday";
@@ -48,7 +48,7 @@ export default function Routine() {
     );
   } else {
     return timetable
-      .filter((day) => day.day === "monday")
+      .filter((day) => day.day === currentday)
       .filter((day) => day.subject !== null)
       .map((day) => {
         return (

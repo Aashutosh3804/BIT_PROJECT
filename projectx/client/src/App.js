@@ -1,14 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
 import ResLog from "./components/ResLog/ResLog";
 import { AuthContext } from "./context/Auth/auth";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import setHeader from "./util/setHeader";
 import AttendanceDiv from "./components/Attendence/AttendanceDiv";
@@ -25,10 +19,8 @@ if (localStorage.token) {
 function App() {
   const { state, loadUser } = useContext(AuthContext);
   useEffect(() => {
-    console.log("called");
-
     loadUser();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Router>
@@ -40,7 +32,12 @@ function App() {
             {state.isLoggedIn ? <Header /> : null}
 
             <Switch>
-              <Route path='/' exact component={HomePage} />
+              <ProtectedRoute
+                isLoggedin={state.isLoggedIn}
+                path='/'
+                exact
+                component={HomePage}
+              />
 
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}

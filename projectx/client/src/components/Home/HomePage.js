@@ -7,7 +7,6 @@ import { Mycontext } from "../../context/context";
 import AttendanceGraph from "./AttendanceGraph";
 
 import Routine from "./Routine";
-import FooterPage from "./Footer";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
@@ -23,7 +22,7 @@ export default function HomePage() {
       settimetable(response.data);
     };
     res();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       <div>
