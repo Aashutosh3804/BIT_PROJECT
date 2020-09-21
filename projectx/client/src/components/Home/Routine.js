@@ -50,7 +50,7 @@ export default function Routine() {
     return timetable
       .filter((day) => day.day === "monday")
       .filter((day) => day.subject !== null)
-      .filter((day) => day.subject === "DAA")
+
       .map((day) => {
         return (
           <Carousel.Item>
