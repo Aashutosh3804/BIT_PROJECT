@@ -16,6 +16,7 @@ import Header from "./components/Home/Header";
 import { TimeContext } from "./context/context";
 import TimeTable from "./components/TimeTable/TimeTable";
 import Faculty from "./components/Faculty/Faculty";
+import AttendanceGraph from "./components/Home/AttendanceGraph";
 
 if (localStorage.token) {
   setHeader(localStorage.token);
@@ -43,6 +44,7 @@ function App() {
               <Route path="/attendance" exact component={AttendanceDiv} />
               <Route path="/timetable" exact component={TimeTable} />
               <Route path="/faculty" exact component={Faculty} />
+              <Route path="/graph" excaat component={AttendanceGraph} />
             </Switch>
           </>
         ) : (
