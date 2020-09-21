@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
+import {AuthContext} from '../../context/Auth/auth'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Navbar,
@@ -13,6 +13,10 @@ import {
 } from "react-bootstrap";
 
 export default function Header() {
+  const {LogOut}=useContext(AuthContext);
+  const handleLogout=()=>{
+    LogOut();
+  }
   return (
     <Navbar bg='light' expand='lg'>
       <Navbar.Brand href='/'>CSE Dept</Navbar.Brand>
@@ -39,8 +43,8 @@ export default function Header() {
           </NavDropdown>
         </Nav>
         <Form inline>
-          <Button variant='outline-success'>
-            <Link to='/login'>Login/Signup</Link>
+          <Button variant='outline-success' onClick={handleLogout}>
+          <Link to='/login' >LogOut</Link>
           </Button>
         </Form>
       </Navbar.Collapse>

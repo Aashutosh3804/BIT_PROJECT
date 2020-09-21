@@ -137,9 +137,17 @@ const Auth = (props) => {
       setTimeout(()=>dispatch({type:"Remove_Error"}),3500);
     }
   };
+  const LogOut=()=>{
+    dispatch({
+      type:"LogOut",
+      payload:{
+        error:[]
+      }
+    })
+  }
 
   return (
-    <AuthContext.Provider value={{ state, Login,SignUp,loadUser }}>
+    <AuthContext.Provider value={{ state, Login,SignUp,loadUser,LogOut }}>
       {props.children}
     </AuthContext.Provider>
   );
