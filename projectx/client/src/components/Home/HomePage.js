@@ -27,9 +27,8 @@ export default function HomePage() {
   return (
     <div>
       <div>
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-          {Routine()}
-        </Carousel>
+        {/* activeIndex={index} onSelect={handleSelect} */}
+        <Carousel>{Routine()}</Carousel>
         {AttendanceGraph()}
       </div>
       {/* {FooterPage()} */}

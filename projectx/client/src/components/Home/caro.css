@@ -1,4 +1,15 @@
 .routine_item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.subject {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin: 50px;
+  align-content: space-around;
+  justify-content: space-around;
 }

@@ -107,7 +107,7 @@ export default function AttendanceGraph() {
     //   rootProps={{ "data-testid": "2" }}
     // />
     //  </div>
-    <div style={{ width: "600px" }}>
+    <div style={{ maxWidth: "500px" }}>
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
