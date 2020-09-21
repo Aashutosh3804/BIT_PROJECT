@@ -36,9 +36,11 @@ function App() {
     <Router>
 
     <TimeContext>
-          <Route path="/login" component={ResLog}/>
-            {state.isLoggedIn?
-              <>
+    {!state.loading?
+      <>
+      <Route path="/login" component={ResLog}/>
+           
+              
               <Header />
               <Switch>
                 <Route path='/' exact component={HomePage} />
@@ -46,10 +48,9 @@ function App() {
 
                 <Route path='/attendance' exact component={AttendanceDiv} />
               </Switch>
-              </>
-              :
-              <Redirect to="/login"/>
-            }
+             </>
+            :<></>}
+          
             </TimeContext>
             
           
