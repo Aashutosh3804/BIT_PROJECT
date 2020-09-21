@@ -1,36 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
-import Axios from "axios";
-import { AuthContext } from "../../context/auth";
+import { AuthContext } from "../../context/Auth/auth";
 
 const SignUp = (props) => {
-  const { state, dispatch } = useContext(AuthContext);
-  const [err, setError] = useState([]);
+  const { state, SignUp } = useContext(AuthContext);
 
-  const onSubmit = async (values) => {
-    try {
-      const res = await Axios.post(
-        "/getSignup",
-        JSON.stringify({ ...values, usn: values.usn.toLowerCase() }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      dispatch({
-        type: "SignUp",
-        payload: {
-          user: res.data.token,
-        },
-      });
-    } catch (error) {
-      dispatch({
-        type: "LOGIN_FAIL",
-      });
-      setError(error.response.data.errors);
-    }
-  };
+  const onSubmit = (values)=>{
+    SignUp(values)
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -83,15 +60,14 @@ const SignUp = (props) => {
     formik.resetForm();
   }, [props, state]);
   let err_jsx;
-  if (err.length > 0) {
-    err_jsx = err.map((er) => {
+  if (state.error.length > 0) {
+    err_jsx = state.error.map((er) => {
       return (
         <h4 style={{ color: "red" }} key='sd'>
           {er.message}
         </h4>
       );
     });
-    err.forEach((er) => setTimeout(() => setError(err.splice(1)), 4000));
   }
   return (
     <form onSubmit={formik.handleSubmit}>

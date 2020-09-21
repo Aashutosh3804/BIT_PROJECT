@@ -27,9 +27,9 @@ app.post("/getLogin", signIn.signin);
 
 app.post("/getSignup", signUp.signup);
 
-app.get("/timetable", tokenVerif.verifyToken, timetable.timetable);
+app.get("/timetable", timetable.timetable);
 
-app.get("/timetable/:day", tokenVerif.verifyToken, timetable.dayTimeTable);
+app.get("/timetable/:day", timetable.dayTimeTable);
 
 app.get("/teacherInfo", tokenVerif.verifyToken, teacher.teacherInfo);
 

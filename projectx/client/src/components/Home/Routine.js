@@ -1,17 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import Mycontext from "../../context/context";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Mycontext} from '../../context/context'
 import "./caro.css";
 
 export default function Routine() {
-  const time = useContext(Mycontext);
-  const [t, sett] = useState(time);
-  useEffect(() => {
-    sett(time);
-  }, [time]);
-  console.log(t);
+  const {timetable} = useContext(Mycontext);
+  // const [t, sett] = useState(time);
+  // useEffect(() => {
+  //   sett(time);
+  // }, [time]);
+  // console.log(t);
 
   const today = new Date();
   // const currenttime = today.getHours();
@@ -40,12 +40,11 @@ export default function Routine() {
     currentday = "saturday";
   }
 
-  console.log(currentday);
 
-  if (Object.keys(t).length < 1) {
+  if (Object.keys(timetable).length < 1) {
     return <div></div>;
   } else {
-    return t
+    return timetable
       .filter((day) => day.day === "monday")
       .filter((day) => day.subject !== null)
       .map((day) => {

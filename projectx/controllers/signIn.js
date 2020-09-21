@@ -29,7 +29,7 @@ exports.signin = async (req, res) => {
       return res.status(500).json({ errors: [{ message: "Wrong Password" }] });
     }
 
-    user = {
+    let user = {
       //name:rows[0].name,
       usn: rows[0].usn,
       // email:rows[0].email,

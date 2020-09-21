@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, } from "react";
 import { useFormik } from "formik";
-import Axios from "axios";
-import { AuthContext } from "../../context/auth";
+import { AuthContext } from "../../context/Auth/auth";
 import { Spinner } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from "react-router";
@@ -10,40 +9,15 @@ const SignIn = (props) => {
     password: "",
     usn: "",
   };
-  const [err, setError] = useState([]);
-  const { state, dispatch } = useContext(AuthContext);
+  const { state, Login } = useContext(AuthContext);
 
-  const onSubmit = async ({ usn, password }) => {
-    try {
-      dispatch({
-        type: "Login_Start",
-      });
-      const body = JSON.stringify({ usn, password: password.toLowerCase() });
-      const res = await Axios.post("/getLogin", body, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      dispatch({
-        type: "Login",
-        payload: {
-          token: res.data.token,
-        },
-      });
-    } catch (error) {
-      console.log(error.response.data);
-      dispatch({
-        type: "LOGIN_FAIL",
-      });
-      setError(error.response.data.errors);
-    }
-  };
+  const onSubmit = (values)=>{
+    Login(values)
+  }
   let err_jsx;
-  if (err.length > 0) {
-    err.forEach((er) => setTimeout(() => setError(err.splice(1)), 3000));
+  if (state.error.length > 0) {
 
-    err_jsx = err.map((er) => {
+    err_jsx = state.error.map((er) => {
       return (
         <h4 style={{ color: "red" }} key='sd'>
           {er.message}
