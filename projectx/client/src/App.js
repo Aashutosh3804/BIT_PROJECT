@@ -13,48 +13,42 @@ import HomePage from "./components/Home/HomePage";
 import setHeader from "./util/setHeader";
 import AttendanceDiv from "./components/Attendence/AttendanceDiv";
 import Header from "./components/Home/Header";
-import {TimeContext} from './context/context'
-
+import { TimeContext } from "./context/context";
+import TimeTable from "./components/TimeTable/TimeTable";
+import Faculty from "./components/Faculty/Faculty";
 
 if (localStorage.token) {
   setHeader(localStorage.token);
 }
 
 function App() {
-  const { state,loadUser } = useContext(AuthContext);
+  const { state, loadUser } = useContext(AuthContext);
   useEffect(() => {
     console.log("called");
-    
-    
-      loadUser()
-     
-    
+
+    loadUser();
   }, []);
-  
 
   return (
     <Router>
+      <TimeContext>
+        {!state.loading ? (
+          <>
+            <Route path="/login" component={ResLog} />
 
-    <TimeContext>
-    {!state.loading?
-      <>
-      <Route path="/login" component={ResLog}/>
-           
-              
-              <Header />
-              <Switch>
-                <Route path='/' exact component={HomePage} />
+            <Header />
+            <Switch>
+              <Route path="/" exact component={HomePage} />
 
-
-                <Route path='/attendance' exact component={AttendanceDiv} />
-              </Switch>
-             </>
-            :<></>}
-          
-            </TimeContext>
-            
-          
-      
+              <Route path="/attendance" exact component={AttendanceDiv} />
+              <Route path="/timetable" exact component={TimeTable} />
+              <Route path="/faculty" exact component={Faculty} />
+            </Switch>
+          </>
+        ) : (
+          <></>
+        )}
+      </TimeContext>
     </Router>
   );
 }
