@@ -42,7 +42,22 @@ export default function Routine() {
 
 
   if (Object.keys(timetable).length < 1) {
-    return <div></div>;
+    return (<Carousel.Item>
+    <div className='routine_item'>
+      <u style={{ color: "orange" }}>
+        <h4 style={{ color: "orange" }}>Time</h4>
+      </u>
+
+      <div style={{ display: "flex", margin: "60px" }}>
+        <h5>Subject</h5>
+        <hr />
+        <h5>Teacher</h5>
+        <br />
+        <hr />
+        <h5>Room</h5>
+      </div>
+    </div>
+  </Carousel.Item>);
   } else {
     return timetable
       .filter((day) => day.day === "monday")
