@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-bootstrap";
+import { Carousel,Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Mycontext} from '../../context/context'
 import "./caro.css";
@@ -43,20 +43,7 @@ export default function Routine() {
 
   if (Object.keys(timetable).length < 1) {
     return (<Carousel.Item>
-    <div className='routine_item'>
-      <u style={{ color: "orange" }}>
-        <h4 style={{ color: "orange" }}>Time</h4>
-      </u>
-
-      <div style={{ display: "flex", margin: "60px" }}>
-        <h5>Subject</h5>
-        <hr />
-        <h5>Teacher</h5>
-        <br />
-        <hr />
-        <h5>Room</h5>
-      </div>
-    </div>
+  <Spinner animation='border' variant='primary' size='ml'/>
   </Carousel.Item>);
   } else {
     return timetable

@@ -19,13 +19,13 @@ export default function Header() {
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='mr-auto'>
-          <Nav.Link href='/'>Home</Nav.Link>
-          <Nav.Link href='/timetable'>Time-Table</Nav.Link>
-          <Nav.Link href='/attendance'>Attendance</Nav.Link>
-          <Nav.Link href='/#'>Placements</Nav.Link>
-          <Nav.Link href='/#'>Marks</Nav.Link>
-          <Nav.Link href='/#'>Notes</Nav.Link>
-          <Nav.Link href='/faculty'>Faculty</Nav.Link>
+          <Nav.Link to='/' as={Link}>Home</Nav.Link>
+          <Nav.Link to='/timetable' as={Link}>Time-Table</Nav.Link>
+          <Nav.Link to='/attendance' as={Link}>Attendance</Nav.Link>
+          <Nav.Link to='/#' as={Link}>Placements</Nav.Link>
+          <Nav.Link to='/#' as={Link}>Marks</Nav.Link>
+          <Nav.Link to='/#' as={Link}>Notes</Nav.Link>
+          <Nav.Link to='/faculty' as={Link}>Faculty</Nav.Link>
           <NavDropdown title='Information' id='basic-nav-dropdown'>
             <NavDropdown.Item href='#action/3.1'>Notice Board</NavDropdown.Item>
             <NavDropdown.Item href='#action/3.2'>
