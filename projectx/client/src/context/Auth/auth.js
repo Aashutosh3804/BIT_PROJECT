@@ -1,13 +1,13 @@
 import React, { createContext, useReducer } from "react";
-import setHeader from '../../util/setHeader'
-import axios from 'axios';
+import setHeader from "../../util/setHeader";
+import axios from "axios";
 const AuthContext = createContext();
 const initialState = {
   isLoggedIn: false,
   user: null,
   token: localStorage.getItem("token"),
   loading: true,
-  error:[]
+  error: [],
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -39,24 +39,23 @@ const reducer = (state, action) => {
         user: null,
         token: null,
         loading: false,
-        error:action.payload.error
+        error: action.payload.error,
       };
-      case "Remove_Error":
-        const err_updated=state.error.splice(1);
-        return {...state,error:err_updated}
+    case "Remove_Error":
+      const err_updated = state.error.splice(1);
+      return { ...state, error: err_updated };
 
     default:
       return state;
   }
 };
 
-
 const Auth = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const loadUser=async () => {
-    if(localStorage.token){
-      setHeader(localStorage.token)
+  const loadUser = async () => {
+    if (localStorage.token) {
+      setHeader(localStorage.token);
     }
     try {
       const result = await axios.get("/getUser");
@@ -70,14 +69,14 @@ const Auth = (props) => {
     } catch (err) {
       dispatch({
         type: "LOGIN_FAIL",
-        payload:{
-          error:[]
-        }
+        payload: {
+          error: [],
+        },
       });
     }
   };
 
-  const Login= async ({ usn, password }) => {
+  const Login = async ({ usn, password }) => {
     try {
       dispatch({
         type: "Login_Start",
@@ -95,20 +94,20 @@ const Auth = (props) => {
           token: res.data.token,
         },
       });
-      loadUser()
+      loadUser();
     } catch (erro) {
       console.log(erro.response.data);
       dispatch({
         type: "LOGIN_FAIL",
-        payload:{
-          error:erro.response.data.errors
-        }
+        payload: {
+          error: erro.response.data.errors,
+        },
       });
-      setTimeout(()=>dispatch({type:"Remove_Error"}),3500);
+      setTimeout(() => dispatch({ type: "Remove_Error" }), 3500);
     }
   };
 
-  const SignUp=async (values) => {
+  const SignUp = async (values) => {
     try {
       const res = await axios.post(
         "/getSignup",
@@ -130,24 +129,24 @@ const Auth = (props) => {
     } catch (error) {
       dispatch({
         type: "LOGIN_FAIL",
-        payload:{
-          error:error.response.data.errors
-        }
+        payload: {
+          error: error.response.data.errors,
+        },
       });
-      setTimeout(()=>dispatch({type:"Remove_Error"}),3500);
+      setTimeout(() => dispatch({ type: "Remove_Error" }), 3500);
     }
   };
-  const LogOut=()=>{
+  const LogOut = () => {
     dispatch({
-      type:"LogOut",
-      payload:{
-        error:[]
-      }
-    })
-  }
+      type: "LogOut",
+      payload: {
+        error: [],
+      },
+    });
+  };
 
   return (
-    <AuthContext.Provider value={{ state, Login,SignUp,loadUser,LogOut }}>
+    <AuthContext.Provider value={{ state, Login, SignUp, loadUser, LogOut }}>
       {props.children}
     </AuthContext.Provider>
   );

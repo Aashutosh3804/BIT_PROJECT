@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, } from "react";
+import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import { AuthContext } from "../../context/Auth/auth";
 import { Spinner } from "react-bootstrap";
+import ResStyle from "./ResLog.module.css";
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from "react-router";
 const SignIn = (props) => {
@@ -11,12 +13,11 @@ const SignIn = (props) => {
   };
   const { state, Login } = useContext(AuthContext);
 
-  const onSubmit = (values)=>{
-    Login(values)
-  }
+  const onSubmit = (values) => {
+    Login(values);
+  };
   let err_jsx;
   if (state.error.length > 0) {
-
     err_jsx = state.error.map((er) => {
       return (
         <h4 style={{ color: "red" }} key='sd'>
@@ -49,8 +50,8 @@ const SignIn = (props) => {
     formik.resetForm();
   }, [props, state]);
   let jsx = !state.loading ? (
-    <form onSubmit={formik.handleSubmit}>
-      <h1>Sign in</h1>
+    <form onSubmit={formik.handleSubmit} className={ResStyle.form}>
+      <h1 className={ResStyle.h1}>Sign in</h1>
       {err_jsx}
 
       <span>or use your account</span>
@@ -63,7 +64,9 @@ const SignIn = (props) => {
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
         value={formik.values.usn}
-        className={formik.touched.usn && formik.errors.usn ? "error" : null}
+        className={
+          formik.touched.usn && formik.errors.usn ? ResStyle.error : null
+        }
       />
       <input
         type='password'
@@ -77,12 +80,21 @@ const SignIn = (props) => {
         onChange={formik.handleChange}
         value={formik.values.password}
         className={
-          formik.touched.password && formik.errors.password ? "error" : null
+          formik.touched.password && formik.errors.password
+            ? ResStyle.error
+            : null
         }
       />
       <a href='/'>Forgot your password?</a>
-      <button type='submit'>Sign In</button>
-      <button id='new' onClick={props.onMobAniSignUp} type='button'>
+      <button type='submit' className={ResStyle.Button}>
+        Sign In
+      </button>
+      <button
+        id={ResStyle.new}
+        className={ResStyle.Button}
+        onClick={props.onMobAniSignUp}
+        type='button'
+      >
         SignUp
       </button>
     </form>

@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import { AuthContext } from "../../context/Auth/auth";
+import ResStyle from "./ResLog.module.css";
 
 const SignUp = (props) => {
   const { state, SignUp } = useContext(AuthContext);
 
-  const onSubmit = (values)=>{
-    SignUp(values)
-  }
+  const onSubmit = (values) => {
+    SignUp(values);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -70,8 +71,8 @@ const SignUp = (props) => {
     });
   }
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <h1>Create Account</h1>
+    <form onSubmit={formik.handleSubmit} className={ResStyle.form}>
+      <h1 className={ResStyle.h1}>Create Account</h1>
 
       <span>or use your email for registration</span>
       <div>{err_jsx}</div>
@@ -87,7 +88,9 @@ const SignUp = (props) => {
         name='name'
         onChange={formik.handleChange}
         value={formik.values.name}
-        className={formik.touched.name && formik.errors.name ? "error" : null}
+        className={
+          formik.touched.name && formik.errors.name ? ResStyle.error : null
+        }
       />
 
       <input
@@ -101,7 +104,9 @@ const SignUp = (props) => {
         name='email'
         onChange={formik.handleChange}
         value={formik.values.email}
-        className={formik.touched.email && formik.errors.email ? "error" : null}
+        className={
+          formik.touched.email && formik.errors.email ? ResStyle.error : null
+        }
       />
 
       <input
@@ -113,7 +118,9 @@ const SignUp = (props) => {
         name='usn'
         onChange={formik.handleChange}
         value={formik.values.usn}
-        className={formik.touched.usn && formik.errors.usn ? "error" : null}
+        className={
+          formik.touched.usn && formik.errors.usn ? ResStyle.error : null
+        }
       />
 
       <input
@@ -127,7 +134,9 @@ const SignUp = (props) => {
         name='batch'
         onChange={formik.handleChange}
         value={formik.values.batch}
-        className={formik.touched.batch && formik.errors.batch ? "error" : null}
+        className={
+          formik.touched.batch && formik.errors.batch ? ResStyle.error : null
+        }
       />
 
       <input
@@ -141,7 +150,9 @@ const SignUp = (props) => {
         name='year'
         onChange={formik.handleChange}
         value={formik.values.year}
-        className={formik.touched.year && formik.errors.year ? "error" : null}
+        className={
+          formik.touched.year && formik.errors.year ? ResStyle.error : null
+        }
       />
 
       <input
@@ -156,7 +167,9 @@ const SignUp = (props) => {
         onChange={formik.handleChange}
         value={formik.values.section}
         className={
-          formik.touched.section && formik.errors.section ? "error" : null
+          formik.touched.section && formik.errors.section
+            ? ResStyle.error
+            : null
         }
       />
 
@@ -172,7 +185,9 @@ const SignUp = (props) => {
         onChange={formik.handleChange}
         value={formik.values.password}
         className={
-          formik.touched.password && formik.errors.password ? "error" : null
+          formik.touched.password && formik.errors.password
+            ? ResStyle.error
+            : null
         }
       />
 
@@ -188,16 +203,21 @@ const SignUp = (props) => {
         onChange={formik.handleChange}
         value={formik.values.confirm}
         className={
-          formik.touched.confirm && formik.errors.confirm ? "error" : null
+          formik.touched.confirm && formik.errors.confirm
+            ? ResStyle.error
+            : null
         }
       />
       {formik.touched.confirm && formik.errors.confirm ? (
         <h4 style={{ color: "red" }}>Password Dont Match</h4>
       ) : null}
 
-      <button type='submit'>Sign Up</button>
+      <button type='submit' className={ResStyle.Button}>
+        Sign Up
+      </button>
       <button
-        id='new1'
+        id={ResStyle.new1}
+        className={ResStyle.Button}
         onClick={() => {
           props.onMobAniSignIn();
         }}

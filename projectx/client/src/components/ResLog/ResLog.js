@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-import "./ResLog.css";
+import ResStyle from "./ResLog.module.css";
 
 export default function ResLog() {
   const [WebAni, setWebAni] = useState(false);
@@ -20,24 +20,32 @@ export default function ResLog() {
     setMobAniSignIn(false);
   };
 
-  var MobAniSlide = "overlay-mobile";
+  var MobAniSlide = ResStyle.overlay_mobile;
   if (MobAniSignIn) {
-    MobAniSlide += " slide1";
+    MobAniSlide = ResStyle.overlay_mobile + " " + ResStyle.slide1;
   } else if (MobAniSignUp) {
-    MobAniSlide += " slide";
+    MobAniSlide = ResStyle.overlay_mobile + " " + ResStyle.slide;
   }
 
   return (
-    <div className="main-container">
+    <div className={ResStyle.maincontainer}>
       <div
-        className={!WebAni ? "containerone" : "container right-panel-active"}
-        id="containerone"
+        className={
+          !WebAni
+            ? ResStyle.containerone
+            : ResStyle.containerone + " " + ResStyle.right_panel_active
+        }
+        id={ResStyle.containerone}
       >
         <div
           className={
             !MobAniSignUp
-              ? "form-container sign-up-container"
-              : "form-container sign-up-container fadein"
+              ? ResStyle.form_container + " " + ResStyle.sign_up_container
+              : ResStyle.form_container +
+                " " +
+                ResStyle.sign_up_container +
+                " " +
+                ResStyle.fadein
           }
         >
           <SignUp onMobAniSignIn={onMobAniSignIn}></SignUp>
@@ -45,34 +53,52 @@ export default function ResLog() {
         <div
           className={
             !MobAniSignIn
-              ? "form-container sign-in-container"
-              : "form-container sign-in-container fadein1"
+              ? ResStyle.form_container + " " + ResStyle.sign_in_container
+              : ResStyle.form_container +
+                " " +
+                ResStyle.sign_in_container +
+                " " +
+                ResStyle.fadein1
           }
         >
           <SignIn onMobAniSignUp={onMobAniSignUp}></SignIn>
         </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
+        <div className={ResStyle.overlay_container}>
+          <div className={ResStyle.overlay}>
+            <div
+              className={ResStyle.overlay_panel + " " + ResStyle.overlay_left}
+            >
+              <h1 className={ResStyle.h1}>Welcome Back!</h1>
+              <p className={ResStyle.p}>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" id="signIn" onClick={onWebAni}>
+              <button
+                className={ResStyle.Button + " " + ResStyle.ghost}
+                id={ResStyle.signIn}
+                onClick={onWebAni}
+              >
                 Sign In
               </button>
             </div>
-            <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp" onClick={onWebAni}>
+            <div
+              className={ResStyle.overlay_panel + " " + ResStyle.overlay_right}
+            >
+              <h1 className={ResStyle.h1}>Hello, Friend!</h1>
+              <p className={ResStyle.p}>
+                Enter your personal details and start journey with us
+              </p>
+              <button
+                className={ResStyle.Button + " " + ResStyle.ghost}
+                id={ResStyle.signIn}
+                onClick={onWebAni}
+              >
                 Sign Up
               </button>
             </div>
           </div>
         </div>
         <div className={MobAniSlide}>
-          <div className="overlay"></div>
+          <div className={ResStyle.overlay}></div>
         </div>
       </div>
     </div>

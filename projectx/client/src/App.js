@@ -17,7 +17,7 @@ import { TimeContext } from "./context/context";
 import TimeTable from "./components/TimeTable/TimeTable";
 import Faculty from "./components/Faculty/Faculty";
 import AttendanceGraph from "./components/Home/AttendanceGraph";
-
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 if (localStorage.token) {
   setHeader(localStorage.token);
 }
@@ -35,16 +35,37 @@ function App() {
       <TimeContext>
         {!state.loading ? (
           <>
-            <Route path="/login" component={ResLog} />
+            <Route path='/login' component={ResLog} />
 
-            <Header />
+            {state.isLoggedIn ? <Header /> : null}
+
             <Switch>
-              <Route path="/" exact component={HomePage} />
+              <Route path='/' exact component={HomePage} />
 
-              <Route path="/attendance" exact component={AttendanceDiv} />
-              <Route path="/timetable" exact component={TimeTable} />
-              <Route path="/faculty" exact component={Faculty} />
-              <Route path="/graph" excaat component={AttendanceGraph} />
+              <ProtectedRoute
+                isLoggedin={state.isLoggedIn}
+                path='/attendance'
+                exact
+                component={AttendanceDiv}
+              />
+              <ProtectedRoute
+                isLoggedin={state.isLoggedIn}
+                path='/timetable'
+                exact
+                component={TimeTable}
+              />
+              <ProtectedRoute
+                isLoggedin={state.isLoggedIn}
+                path='/faculty'
+                exact
+                component={Faculty}
+              />
+              <ProtectedRoute
+                isLoggedin={state.isLoggedIn}
+                path='/graph'
+                excaat
+                component={AttendanceGraph}
+              />
             </Switch>
           </>
         ) : (

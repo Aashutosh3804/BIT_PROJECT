@@ -1,4 +1,4 @@
-.main-container {
+.maincontainer {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(90deg, #cc2b56 0%, #753e88 100%);
   display: flex;
@@ -8,11 +8,11 @@
   height: 100vh;
   width: 100vw;
 }
-h1 {
+.h1 {
   font-weight: bold;
   margin: 0;
 }
-p {
+.p {
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
@@ -22,7 +22,7 @@ p {
 span {
   font-size: 12px;
 }
-a {
+.a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
@@ -39,7 +39,7 @@ a {
   max-width: 100%;
   min-height: 700px;
 }
-.form-container form {
+.form {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -49,10 +49,10 @@ a {
   align-items: center;
   text-align: center;
 }
-.social-container {
+.social_container {
   margin: 20px 0;
 }
-.social-container a {
+.socia_container a {
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-flex;
@@ -62,20 +62,20 @@ a {
   height: 40px;
   width: 40px;
 }
-.form-container input {
+.form_container input {
   background: #eee;
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
 }
-.form-container input.error {
+.error {
   border: 1px solid red;
 }
-.form-container input.error::placeholder {
+.error::placeholder {
   color: red;
 }
-button {
+.Button {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
@@ -88,36 +88,36 @@ button {
   transition: transform 0.2ms ease-in;
   outline: none;
 }
-button:active {
+.Button:active {
   transform: scale(0.95);
 }
-button:focus {
+.Button:focus {
   outline: none;
 }
 
-button.ghost {
+.Button.ghost {
   background: transparent;
   border-color: #fff;
 }
 
-.form-container {
+.form_container {
   position: absolute;
   top: 0;
   height: 100%;
   transition: all 0.5s ease-in-out;
 }
-.sign-in-container {
+.sign_in_container {
   left: 0;
   width: 50%;
   z-index: 2;
 }
-.sign-up-container {
+.sign_up_container {
   left: 0;
   width: 50%;
   z-index: 1;
   opacity: 0;
 }
-.overlay-container {
+.overlay_container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -138,7 +138,7 @@ button.ghost {
   transition: transform 0.6s ease-in-out;
 }
 
-.overlay-panel {
+.overlay_panel {
   position: absolute;
   top: 0;
   display: flex;
@@ -152,36 +152,36 @@ button.ghost {
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-.overlay-right {
+.overlay_right {
   right: 0;
   transform: translateX(0%);
 }
-.overlay-left {
+.overlay_left {
   transform: translateX(-20%);
 }
 
 /*Animation*/
 
-.container.right-panel-active .sign-in-container {
+.containerone.right_panel_active .sign_in_container {
   transform: translateX(100%);
   opacity: 0;
 }
 
 /* Move Overlay */
-.container.container.right-panel-active .overlay-container {
+.containerone.right_panel_active .overlay_container {
   transform: translateX(-100%);
 }
 
-.container.right-panel-active .sign-up-container {
+.containerone.right_panel_active .sign_up_container {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
 }
 
-.container.right-panel-active .overlay {
+.containerone.right_panel_active .overlay {
   transform: translateX(50%);
 }
-.container.right-panel-active .overlay-left {
+.containerone.right_panel_active .overlay_left {
   transform: translateX(0);
 }
 
@@ -191,7 +191,7 @@ button.ghost {
 }
 
 @media screen and (max-width: 700px) {
-  .overlay-container {
+  .overlay_container {
     display: none;
   }
   #new,
@@ -201,50 +201,50 @@ button.ghost {
     /* position: relative;
    top: -0%; */
   }
-  h1 {
+  .h1 {
     font-size: 1.2rem;
   }
-  .overlay-mobile {
+  .overlay_mobile {
     left: 0;
     z-index: 8;
     width: 20%;
     position: absolute;
     height: 100%;
   }
-  .overlay-mobile.slide {
+  .overlay_mobile.slide {
     animation: slide 0.7s ease-out;
     animation-fill-mode: both;
     transition: all 0.5s;
   }
-  .overlay-mobile.slide1 {
+  .overlay_mobile.slide1 {
     animation: slide1 0.7s ease-out;
   }
-  .overlay-mobile .overlay {
+  .overlay_mobile .overlay {
     left: -70%;
     width: 100%;
     background-color: #ff416c;
     position: relative;
     height: 106%;
   }
-  .container {
+  .containerone {
     /* max-width: 500px; */
     min-width: 200px;
     min-height: 700px;
     width: 85%;
     overflow: auto;
   }
-  .form-container {
+  .form_container {
     width: 100%;
     top: 5.6%;
   }
-  .sign-up-container.fadein {
+  .sign_up_container.fadein {
     animation: fadeIn 0.8s;
     animation-fill-mode: both;
     /* transition: all 0.5s ; */
   }
-  .sign-in-container.fadein1 {
+  .sign_in_container.fadein1 {
     animation: fadeIn1 1.1s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
   }
 
   @keyframes fadeIn {
