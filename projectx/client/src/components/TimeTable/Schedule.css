@@ -3,14 +3,15 @@
 .carousel .slide {
   background-color: white;
 }
-/* p {
+p {
   font-size: 20px;
   text-align: center;
   font-weight: bold;
   top: 27px;
   padding: 10px 0px 10px 0px;
   position: relative;
-} */
+}
+
 /* body {
   background: linear-gradient(90deg, #cc2b56 0%, #753e88 100%);
   font-size: 16px;
@@ -20,11 +21,11 @@
   width: 60%;
   margin: auto;
   align-content: center;
-}
+} */
 strong {
   font-weight: 600;
 }
-h1 {
+/* h1 {
   font-family: "Oswald", sans-serif;
   letter-spacing: 1.5px;
   color: #333333;
@@ -79,7 +80,7 @@ h1 {
 
   border-radius: 10px;
   height: 150px;
-  min-width: 100px;
+  min-width: 160px;
 
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   margin-bottom: 50px;
@@ -125,7 +126,10 @@ h1 {
 @media (max-width: 800px) {
   .timeline .event:before {
     left: -0.5px;
-    top: 28px;
+    min-width: 160px;
+    margin-top: 30px;
+
+    top: 45px;
     background-color: #4298c3;
     color: white;
 
@@ -135,10 +139,9 @@ h1 {
     text-align: right;
     font-weight: 400;
     font-size: 0.9em;
-    min-width: 120px;
   }
   .timeline .event p {
-    top: 27px;
+    top: 60px;
     padding: 10px 0px 10px 0px;
     position: relative;
   }
