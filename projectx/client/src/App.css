@@ -2,6 +2,9 @@
 *{
     box-sizing: border-box;
 }
+div#root{
+   height: 100vh; 
+}
 body{
      font-family: 'Montserrat', sans-serif;
      margin: 0;

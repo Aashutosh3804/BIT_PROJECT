@@ -1,12 +1,24 @@
 #attendanceDivKaBaap{
-
-    margin: 5%;
-    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content:center;
     overflow:auto;
-    padding: 5%;
 }
-@media screen and (max-width:600px){
+@media (max-width:600px){
     #attendanceDivKaBaap{
-        margin: 10%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content:center;
+    overflow:auto;
     }
 }
