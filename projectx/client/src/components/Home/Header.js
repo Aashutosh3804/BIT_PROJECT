@@ -28,7 +28,7 @@ export default function Header() {
           <Nav.Link to='/#' as={Link}>
             Placements
           </Nav.Link>
-          <Nav.Link to='/#' as={Link}>
+          <Nav.Link to='/marks' as={Link}>
             Marks
           </Nav.Link>
           <Nav.Link to='/#' as={Link}>
