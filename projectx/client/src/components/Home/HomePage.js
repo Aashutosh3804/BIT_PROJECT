@@ -12,6 +12,7 @@ import Notices from "./Notices";
 import NewNotices from "./NewNotices";
 import Footer from "./Footer";
 import "./charts.css";
+import NoticeBoard from "./NoticeBoard";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
@@ -43,9 +44,13 @@ export default function HomePage() {
         <br />
         <hr />
         <div className="notice">
-          <div className="ClubCard">abcd</div>
+          <div className="ClubCard">
+            <NewNotices />
+          </div>
 
-          <div className="ClubCard">defg</div>
+          <div className="ClubCard">
+            <NoticeBoard />
+          </div>
         </div>
       </div>
     </div>

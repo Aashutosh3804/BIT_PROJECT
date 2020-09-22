@@ -1,20 +1,22 @@
 import React from "react";
 
-export default function NewNotices() {
+export default function NoticeBoard() {
   return (
     <div>
       <p>
-        <h1>Club Activities</h1>
+        <h1>Notice Board</h1>
       </p>
       <p>
+        {" "}
         <i class="calendar outline icon" style={{ color: "green" }} />
         <a href="#" style={{ color: "blue" }}>
-          Rotract club
-        </a>
-        is Looking For Volunteers&nbsp;&nbsp;
+          {" "}
+          Fill this form
+        </a>{" "}
+        everyone should fill this form&nbsp;&nbsp;
         <span>
           <a href="#" style={{ color: "blue" }}>
-            Click here!!
+            Click here !!
           </a>
         </span>
       </p>
@@ -23,9 +25,9 @@ export default function NewNotices() {
         <i class="calendar outline icon" style={{ color: "green" }} />
         <a href="#" style={{ color: "blue" }}>
           {" "}
-          TEDx
+          Placement Activity
         </a>{" "}
-        we are hiring&nbsp;&nbsp;
+        5th sem students meet HOD Asap&nbsp;&nbsp;
         <span>
           <a href="#" style={{ color: "blue" }}>
             Click here!!
@@ -34,12 +36,13 @@ export default function NewNotices() {
       </p>
       <hr />
       <p>
+        {" "}
         <i class="calendar outline icon" style={{ color: "green" }} />
         <a href="#" style={{ color: "blue" }}>
           {" "}
-          Robolution Club
+          Papers corrected
         </a>{" "}
-        working on drone,students can contact&nbsp;&nbsp;
+        5th sem students internals papers&nbsp;&nbsp;
         <span>
           <a href="#" style={{ color: "blue" }}>
             Click here!!
@@ -48,33 +51,34 @@ export default function NewNotices() {
       </p>
       <hr />
       <p>
+        {" "}
         <i class="calendar outline icon" style={{ color: "green" }} />
         <a href="#" style={{ color: "blue" }}>
           {" "}
-          Diminished 7th
+          Hackathon (27/10/2020)
         </a>{" "}
-        Live Jam Today!!don't miss&nbsp;&nbsp;
+        4 members a team&nbsp;&nbsp;
         <span>
           <a href="#" style={{ color: "blue" }}>
-            Click here!!
+            Click here for topics!!
           </a>
         </span>
       </p>
       <hr />
       <p>
+        {" "}
         <i class="calendar outline icon" style={{ color: "green" }} />
         <a href="#" style={{ color: "blue" }}>
           {" "}
-          Drama Club
+          Coding Practice
         </a>{" "}
-        Looking for female artists&nbsp;&nbsp;
+        everyday from 5PM to 6PM&nbsp;&nbsp;
         <span>
           <a href="#" style={{ color: "blue" }}>
-            Click here!!
+            Click here !!
           </a>
         </span>
       </p>
-
       <hr />
       <p>
         <a href="#" style={{ color: "blue" }}>
