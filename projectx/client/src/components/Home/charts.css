@@ -1,0 +1,56 @@
+.charts {
+  display: flex;
+  width: 100%;
+}
+.notice {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.attendance {
+  width: 50%;
+}
+
+.marks {
+  width: 50%;
+}
+
+.ClubCard {
+  height: 700px;
+  overflow: scroll;
+  padding: 50px;
+  width: 40%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin-left: 100px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+  .charts {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+  }
+  .notice {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 80%;
+  }
+  .attendance {
+    height: 50%;
+    width: 100%;
+  }
+  .ClubCard {
+    width: 100%;
+    margin-top: 20%;
+    margin-left: 0px;
+  }
+
+  .marks {
+    height: 50%;
+    width: 100%;
+  }
+}

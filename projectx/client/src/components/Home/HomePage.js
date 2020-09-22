@@ -5,10 +5,14 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Mycontext } from "../../context/context";
 import AttendanceGraph from "./AttendanceGraph";
+import MarksGraph from "./MarksGraph";
 
 import Routine from "./Routine";
 import Notices from "./Notices";
+import NewNotices from "./NewNotices";
 import Footer from "./Footer";
+import "./charts.css";
+import NoticeBoard from "./NoticeBoard";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
@@ -32,17 +36,23 @@ export default function HomePage() {
           {Routine()}
         </Carousel>
         <hr />
-        {AttendanceGraph()}
+        <div class="charts">
+          <div class="attendance">{AttendanceGraph()}</div>
+          <br />
+          <div class="marks">{MarksGraph()}</div>
+        </div>
         <br />
-        <br />
+        <hr />
+        <div className="notice">
+          <div className="ClubCard">
+            <NewNotices />
+          </div>
 
-        <Notices />
+          <div className="ClubCard">
+            <NoticeBoard />
+          </div>
+        </div>
       </div>
-
-      <br />
-      <br />
-      <hr />
-      <Footer />
     </div>
   );
 }

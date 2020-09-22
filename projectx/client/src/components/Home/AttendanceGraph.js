@@ -14,18 +14,18 @@ export default function AttendanceGraph() {
 
       options3d: {
         enabled: true,
-        alpha: 10,
-        beta: 15,
-        depth: 50,
-        viewDistance: 50,
+        alpha: 20,
+        beta: 20,
+        depth: 100,
+        viewDistance: 25,
       },
-      backgroundColor: {
-        linearGradient: [0, 0, 500, 500],
-        stops: [
-          [0, "rgb(18,18,18)"],
-          [1, "rgb(18,18,18)"],
-        ],
-      },
+      //   backgroundColor: {
+      //     linearGradient: [0, 0, 500, 500],
+      //     stops: [
+      //       [0, "rgb(18,18,18)"],
+      //       [1, "rgb(18,18,18)"],
+      //     ],
+      //   },
     },
     title: {
       text: "Subject Wise Attendance",
@@ -40,7 +40,7 @@ export default function AttendanceGraph() {
     // },
     plotOptions: {
       column: {
-        depth: 25,
+        depth: 50,
       },
     },
     xAxis: {
@@ -57,7 +57,7 @@ export default function AttendanceGraph() {
         type: "column",
         name: "Attendance",
         data: [
-          ["DAA", 84.0],
+          ["DAA", 80.0],
           ["Os", 81.8],
 
           ["MATHS", 85.5],
