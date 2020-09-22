@@ -12,6 +12,7 @@ import TimeTable from "./components/TimeTable/TimeTable";
 import Faculty from "./components/Faculty/Faculty";
 import AttendanceGraph from "./components/Home/AttendanceGraph";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Footer from "./components/Home/Footer";
 if (localStorage.token) {
   setHeader(localStorage.token);
 }
@@ -27,39 +28,39 @@ function App() {
       <TimeContext>
         {!state.loading ? (
           <>
-            <Route path='/login' component={ResLog} />
+            <Route path="/login" component={ResLog} />
 
             {state.isLoggedIn ? <Header /> : null}
 
             <Switch>
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path='/'
+                path="/"
                 exact
                 component={HomePage}
               />
 
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path='/attendance'
+                path="/attendance"
                 exact
                 component={AttendanceDiv}
               />
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path='/timetable'
+                path="/timetable"
                 exact
                 component={TimeTable}
               />
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path='/faculty'
+                path="/faculty"
                 exact
                 component={Faculty}
               />
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path='/graph'
+                path="/graph"
                 excaat
                 component={AttendanceGraph}
               />
@@ -69,6 +70,7 @@ function App() {
           <></>
         )}
       </TimeContext>
+      <Footer />
     </Router>
   );
 }
