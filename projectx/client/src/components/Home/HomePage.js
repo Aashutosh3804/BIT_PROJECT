@@ -7,6 +7,8 @@ import { Mycontext } from "../../context/context";
 import AttendanceGraph from "./AttendanceGraph";
 
 import Routine from "./Routine";
+import Notices from "./Notices";
+import Footer from "./Footer";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
@@ -26,11 +28,21 @@ export default function HomePage() {
   return (
     <div>
       <div>
-        {/* activeIndex={index} onSelect={handleSelect} */}
-        <Carousel>{Routine()}</Carousel>
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          {Routine()}
+        </Carousel>
+        <hr />
         {AttendanceGraph()}
+        <br />
+        <br />
+
+        <Notices />
       </div>
-      {/* {FooterPage()} */}
+
+      <br />
+      <br />
+      <hr />
+      <Footer />
     </div>
   );
 }

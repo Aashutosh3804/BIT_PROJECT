@@ -1,46 +1,86 @@
-// import React from "react";
-// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 
-// const FooterPage = () => {
-//   return (
-//     <MDBFooter color="blue" className="font-small pt-4 mt-4">
-//       <MDBContainer fluid className="text-center text-md-left">
-//         <MDBRow>
-//           <MDBCol md="6">
-//             <h5 className="title">Footer Content</h5>
-//             <p>
-//               Here you can use rows and columns here to organize your footer
-//               content.
-//             </p>
-//           </MDBCol>
-//           <MDBCol md="6">
-//             <h5 className="title">Links</h5>
-//             <ul>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 1</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 2</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 3</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 4</a>
-//               </li>
-//             </ul>
-//           </MDBCol>
-//         </MDBRow>
-//       </MDBContainer>
-//       <div className="footer-copyright text-center py-3">
-//         <MDBContainer fluid>
-//           &copy; {new Date().getFullYear()} Copyright:{" "}
-//           <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
-//         </MDBContainer>
-//       </div>
-//     </MDBFooter>
-//   );
-// };
+export default function Footer() {
+  return (
+    <div class="ui inverted vertical footer segment">
+      <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">Group 1</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">
+                Link One
+              </a>
+              <a href="#" class="item">
+                Link Two
+              </a>
+              <a href="#" class="item">
+                Link Three
+              </a>
+              <a href="#" class="item">
+                Link Four
+              </a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Group 2</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">
+                Link One
+              </a>
+              <a href="#" class="item">
+                Link Two
+              </a>
+              <a href="#" class="item">
+                Link Three
+              </a>
+              <a href="#" class="item">
+                Link Four
+              </a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Group 3</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">
+                Link One
+              </a>
+              <a href="#" class="item">
+                Link Two
+              </a>
+              <a href="#" class="item">
+                Link Three
+              </a>
+              <a href="#" class="item">
+                Link Four
+              </a>
+            </div>
+          </div>
+          <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>
+              Extra space for a call to action inside the footer that could help
+              re-engage users.
+            </p>
+          </div>
+        </div>
+        <div class="ui inverted section divider"></div>
 
-// export default FooterPage;
+        <div class="ui horizontal inverted small divided link list">
+          <a class="item" href="#">
+            Site Map
+          </a>
+          <a class="item" href="#">
+            Contact Us
+          </a>
+          <a class="item" href="#">
+            Terms and Conditions
+          </a>
+          <a class="item" href="#">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
