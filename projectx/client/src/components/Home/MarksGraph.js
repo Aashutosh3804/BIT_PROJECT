@@ -4,62 +4,69 @@ import "./AttendanceGroup.css";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highcharts3d from "highcharts/highcharts-3d";
+import cylinder from "highcharts/modules/cylinder";
 highcharts3d(Highcharts);
+cylinder(Highcharts);
 
 export default function AttendanceGraph() {
   const options = {
     chart: {
-      type: "pie",
+      renderTo: "container",
+      type: "column",
+
       options3d: {
         enabled: true,
-        alpha: 60,
-        beta: 0,
+        alpha: 9,
+        beta: 32,
+        depth: 100,
+        viewDistance: 25,
       },
+      //   backgroundColor: {
+      //     linearGradient: [0, 0, 500, 500],
+      //     stops: [
+      //       [0, "rgb(18,18,18)"],
+      //       [1, "rgb(18,18,18)"],
+      //     ],
+      //   },
     },
     title: {
       text: "Subject Wise 1st Internal Marks",
     },
-    accessibility: {
-      point: {
-        valueSuffix: "%",
+    tooltip: {
+      headerFormat: "<b>{point.key}</b><br>",
+      pointFormat:
+        '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}',
+    },
+    // subtitle: {
+    //   text: "Test options by dragging the sliders below",
+    // },
+    plotOptions: {
+      column: {
+        depth: 25,
+        colorByPoint: true,
       },
     },
-    tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
-    },
-    plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: "pointer",
-        depth: 35,
-        dataLabels: {
-          enabled: true,
-          format: "{point.name}",
+    xAxis: {
+      categories: ["DAA", "OS", "MATHS", "DC", "MC&ES", "SE"],
+      labels: {
+        skew3d: true,
+        style: {
+          fontSize: "16px",
         },
       },
     },
     series: [
       {
-        type: "pie",
-        name: "Marks Scored",
+        type: "column",
+        name: "Attendance",
         data: [
-          {
-            name: "DAA",
-            y: 27,
-            sliced: true,
-            selected: true,
-          },
-          ["OS", 26],
+          ["DAA", 27],
+          ["Os", 28],
 
           ["MATHS", 30],
-          {
-            name: "DC",
-            y: 25,
-            sliced: true,
-            selected: true,
-          },
+          ["DC", 22],
           ["MC&ES", 25],
-          ["SE", 23],
+          ["SE", 24],
         ],
       },
     ],

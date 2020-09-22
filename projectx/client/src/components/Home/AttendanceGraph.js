@@ -14,8 +14,8 @@ export default function AttendanceGraph() {
 
       options3d: {
         enabled: true,
-        alpha: 20,
-        beta: 20,
+        alpha: 9,
+        beta: -28,
         depth: 100,
         viewDistance: 25,
       },
@@ -40,7 +40,8 @@ export default function AttendanceGraph() {
     // },
     plotOptions: {
       column: {
-        depth: 50,
+        depth: 25,
+        colorByPoint: true,
       },
     },
     xAxis: {
@@ -55,7 +56,7 @@ export default function AttendanceGraph() {
     series: [
       {
         type: "column",
-        name: "Attendance",
+        name: "Subjects",
         data: [
           ["DAA", 80.0],
           ["Os", 81.8],

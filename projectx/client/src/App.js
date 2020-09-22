@@ -13,6 +13,7 @@ import Faculty from "./components/Faculty/Faculty";
 import AttendanceGraph from "./components/Home/AttendanceGraph";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Home/Footer";
+import MarksDiv from "./components/Marks/MarksDiv";
 if (localStorage.token) {
   setHeader(localStorage.token);
 }
@@ -58,11 +59,12 @@ function App() {
                 exact
                 component={Faculty}
               />
+
               <ProtectedRoute
                 isLoggedin={state.isLoggedIn}
-                path="/graph"
-                excaat
-                component={AttendanceGraph}
+                path="/marks"
+                exact
+                component={MarksDiv}
               />
             </Switch>
           </>

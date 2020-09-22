@@ -43,7 +43,7 @@ export default function Routine() {
   if (Object.keys(timetable).length < 1) {
     return (
       <Carousel.Item>
-        <Spinner animation='border' variant='primary' size='ml' />
+        <Spinner animation="border" variant="primary" size="ml" />
       </Carousel.Item>
     );
   } else {
@@ -53,7 +53,7 @@ export default function Routine() {
       .map((day) => {
         return (
           <Carousel.Item>
-            <div className='routine_item'>
+            <div className="routine_item">
               <u style={{ color: "orange" }}>
                 <h4 style={{ color: "orange" }}>{day.time}</h4>
 
@@ -62,7 +62,7 @@ export default function Routine() {
                 </Badge> */}
               </u>
 
-              <div className='subject'>
+              <div className="subjectname">
                 <h5>{day.subject}</h5>
                 <hr />
                 <h5>{day.shortname}</h5>
