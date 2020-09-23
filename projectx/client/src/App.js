@@ -50,45 +50,47 @@ function App() {
               {state.isLoggedIn ? <Header /> : null}
 
               <Switch>
-                <ProtectedRoute
-                  isLoggedin={state.isLoggedIn}
-                  path="/"
-                  exact
-                  component={HomePage}
-                />
+                <div style={{ position: "absolute", top: "14.5%" }}>
+                  <ProtectedRoute
+                    isLoggedin={state.isLoggedIn}
+                    path="/"
+                    exact
+                    component={HomePage}
+                  />
 
-                <ProtectedRoute
-                  isLoggedin={state.isLoggedIn}
-                  path="/attendance"
-                  exact
-                  component={AttendanceDiv}
-                />
-                <ProtectedRoute
-                  isLoggedin={state.isLoggedIn}
-                  path="/timetable"
-                  exact
-                  component={TimeTable}
-                />
-                <ProtectedRoute
-                  isLoggedin={state.isLoggedIn}
-                  path="/faculty"
-                  exact
-                  component={Faculty}
-                />
+                  <ProtectedRoute
+                    isLoggedin={state.isLoggedIn}
+                    path="/attendance"
+                    exact
+                    component={AttendanceDiv}
+                  />
+                  <ProtectedRoute
+                    isLoggedin={state.isLoggedIn}
+                    path="/timetable"
+                    exact
+                    component={TimeTable}
+                  />
+                  <ProtectedRoute
+                    isLoggedin={state.isLoggedIn}
+                    path="/faculty"
+                    exact
+                    component={Faculty}
+                  />
 
-                <ProtectedRoute
-                  isLoggedin={state.isLoggedIn}
-                  path="/marks"
-                  exact
-                  component={MarksDiv}
-                />
+                  <ProtectedRoute
+                    isLoggedin={state.isLoggedIn}
+                    path="/marks"
+                    exact
+                    component={MarksDiv}
+                  />
+                </div>
               </Switch>
             </>
           ) : (
             <></>
           )}
         </TimeContext>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

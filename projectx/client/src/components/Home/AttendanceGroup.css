@@ -1,5 +1,14 @@
 .highcharts-background {
   fill: rgba(0, 0, 0, 0);
-  stroke: #0000;
+  stroke: black;
   stroke-width: 2px;
+}
+
+.highcharts-credits {
+  stroke: white;
+  fill: white;
+}
+text {
+  stroke: white;
+  fill: white;
 }

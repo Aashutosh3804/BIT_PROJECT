@@ -1,6 +1,7 @@
 .charts {
   display: flex;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 .notice {
   display: flex;
@@ -9,10 +10,16 @@
 }
 .attendance {
   width: 50%;
+  margin: 20px 0px 20px 5px;
+
+  border-radius: 20px;
 }
 
 .marks {
   width: 50%;
+  margin: 20px 0px 20px 5px;
+
+  border-radius: 20px;
 }
 
 .ClubCard {
@@ -33,7 +40,8 @@
     display: flex;
     flex-direction: column;
     height: 50%;
-    width: 100%;
+    width: 90%;
+    margin: auto;
   }
   .notice {
     display: flex;
@@ -44,6 +52,7 @@
   .attendance {
     height: 50%;
     width: 100%;
+    margin: 20px 0px 20px 0px;
   }
   .ClubCard {
     width: 100%;
@@ -54,5 +63,6 @@
   .marks {
     height: 50%;
     width: 100%;
+    margin: 20px 0px 20px 0px;
   }
 }

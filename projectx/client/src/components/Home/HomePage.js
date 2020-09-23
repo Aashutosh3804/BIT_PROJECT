@@ -32,9 +32,11 @@ export default function HomePage() {
   return (
     <div>
       <div>
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-          {Routine()}
-        </Carousel>
+        <div>
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+            {Routine()}
+          </Carousel>
+        </div>
         <hr />
         <div class="charts">
           <div class="attendance">{AttendanceGraph()}</div>

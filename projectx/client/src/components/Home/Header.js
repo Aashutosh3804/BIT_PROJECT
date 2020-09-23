@@ -13,11 +13,13 @@ export default function Header() {
   return (
     <Navbar
       style={{
-        backgroundColor: "#1B1C1D",
+        backgroundColor: "black",
         height: "70px",
         position: "fixed",
         width: "100%",
         zIndex: "500",
+        boxShadow:
+          "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
       }}
       expand="lg"
     >
