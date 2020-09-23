@@ -1,0 +1,48 @@
+.contentNotes {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid rgba(34, 36, 38, 0.1);
+  background: 0 0;
+  margin: 0;
+  font-family: Cambria;
+  padding: 0.3em 0.3em;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 1em;
+
+  border-radius: 0;
+  /* padding-top:0px; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#modulesBar {
+  display: flex;
+  justify-content: center;
+}
+#uiCard {
+  transition: transform 0.5s;
+  color: white;
+}
+#uiCard:hover {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+a:not(.ui) {
+  color: white;
+}
+.ui.card > .extra a:not(.ui),
+.ui.cards > .card > .extra a:not(.ui) {
+  color: white;
+}
+
+.subName {
+  font-size: 20px;
+}

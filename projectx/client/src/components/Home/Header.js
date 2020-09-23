@@ -21,62 +21,62 @@ export default function Header() {
         boxShadow:
           "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
       }}
-      expand="lg"
+      expand='lg'
     >
-      <Navbar.Brand style={{ color: "white" }} href="/">
+      <Navbar.Brand style={{ color: "white" }} href='/'>
         CSE Dept
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link style={{ color: "white" }} to="/" as={Link}>
+      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Collapse id='basic-navbar-nav'>
+        <Nav className='mr-auto'>
+          <Nav.Link style={{ color: "white" }} to='/' as={Link}>
             Home
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/timetable" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/timetable' as={Link}>
             Time-Table
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/attendance" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/attendance' as={Link}>
             Attendance
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/#" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/#' as={Link}>
             Placements
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/marks" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/marks' as={Link}>
             Marks
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/#" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/notes' as={Link}>
             Notes
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to="/faculty" as={Link}>
+          <Nav.Link style={{ color: "white" }} to='/faculty' as={Link}>
             Faculty
           </Nav.Link>
           <NavDropdown
             style={{ backgroundColor: "white" }}
-            title="Information"
-            id="basic-nav-dropdown"
+            title='Information'
+            id='basic-nav-dropdown'
           >
-            <NavDropdown.Item style={{ color: "white" }} href="#action/3.1">
+            <NavDropdown.Item style={{ color: "white" }} href='#action/3.1'>
               Notice Board
             </NavDropdown.Item>
-            <NavDropdown.Item style={{ color: "white" }} href="#action/3.2">
+            <NavDropdown.Item style={{ color: "white" }} href='#action/3.2'>
               Club Activities
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3" style={{ color: "white" }}>
+            <NavDropdown.Item href='#action/3.3' style={{ color: "white" }}>
               Calender Of Events
             </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item style={{ color: "white" }} href="#action/3.4">
+            <NavDropdown.Item style={{ color: "white" }} href='#action/3.4'>
               Contact us
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Form inline>
           <Button
-            variant="outline"
+            variant='outline'
             style={{ border: "1px solid white" }}
             onClick={handleLogout}
           >
-            <Link style={{ color: "white" }} to="/login">
+            <Link style={{ color: "white" }} to='/login'>
               LogOut
             </Link>
           </Button>

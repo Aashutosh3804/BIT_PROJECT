@@ -30,27 +30,34 @@ export default function HomePage() {
     res();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <div>
+    <div className='all-container'>
       <div>
+        {/* <div
+          style={{
+            height: "200px",
+            width: "100%",
+            
+          }}
+        ></div> */}
         <div>
           <Carousel activeIndex={index} onSelect={handleSelect}>
             {Routine()}
           </Carousel>
         </div>
         <hr />
-        <div class="charts">
-          <div class="attendance">{AttendanceGraph()}</div>
+        <div class='charts'>
+          <div class='attendance'>{AttendanceGraph()}</div>
           <br />
-          <div class="marks">{MarksGraph()}</div>
+          <div class='marks'>{MarksGraph()}</div>
         </div>
         <br />
         <hr />
-        <div className="notice">
-          <div className="ClubCard">
+        <div className='notice'>
+          <div className='ClubCard'>
             <NewNotices />
           </div>
 
-          <div className="ClubCard">
+          <div className='ClubCard'>
             <NoticeBoard />
           </div>
         </div>

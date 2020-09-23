@@ -1,16 +1,18 @@
-#attendanceDivKaBaap{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: 100%;
-    align-items: center;
-    align-content: center;
-    justify-content:center;
-    overflow:auto;
+#attendanceDivKaBaap {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  opacity: 1;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
 }
-@media (max-width:600px){
-    #attendanceDivKaBaap{
+@media (max-width: 600px) {
+  #attendanceDivKaBaap {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -18,7 +20,7 @@
     height: 100%;
     align-items: center;
     align-content: center;
-    justify-content:center;
-    overflow:auto;
-    }
+    justify-content: center;
+    overflow: auto;
+  }
 }

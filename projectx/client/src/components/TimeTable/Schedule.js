@@ -63,7 +63,7 @@ export default function Schedule(props) {
   };
 
   return (
-    <div id='content'>
+    <div id='content' style={{ paddingTop: "10%" }}>
       <h1>{props.day.toUpperCase()}</h1>
 
       <ul className='timeline'>{data()}</ul>
