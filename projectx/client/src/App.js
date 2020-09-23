@@ -14,9 +14,23 @@ import AttendanceGraph from "./components/Home/AttendanceGraph";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Home/Footer";
 import MarksDiv from "./components/Marks/MarksDiv";
+import Particles from "react-particles-js";
+
 if (localStorage.token) {
   setHeader(localStorage.token);
 }
+
+const x = {
+  particles: {
+    number: {
+      value: 100,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+  },
+};
 
 function App() {
   const { state, loadUser } = useContext(AuthContext);
@@ -25,55 +39,58 @@ function App() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Router>
-      <TimeContext>
-        {!state.loading ? (
-          <>
-            <Route path="/login" component={ResLog} />
+    <div className="App">
+      <Particles className="particles" params={x} />
+      <Router>
+        <TimeContext>
+          {!state.loading ? (
+            <>
+              <Route path="/login" component={ResLog} />
 
-            {state.isLoggedIn ? <Header /> : null}
+              {state.isLoggedIn ? <Header /> : null}
 
-            <Switch>
-              <ProtectedRoute
-                isLoggedin={state.isLoggedIn}
-                path="/"
-                exact
-                component={HomePage}
-              />
+              <Switch>
+                <ProtectedRoute
+                  isLoggedin={state.isLoggedIn}
+                  path="/"
+                  exact
+                  component={HomePage}
+                />
 
-              <ProtectedRoute
-                isLoggedin={state.isLoggedIn}
-                path="/attendance"
-                exact
-                component={AttendanceDiv}
-              />
-              <ProtectedRoute
-                isLoggedin={state.isLoggedIn}
-                path="/timetable"
-                exact
-                component={TimeTable}
-              />
-              <ProtectedRoute
-                isLoggedin={state.isLoggedIn}
-                path="/faculty"
-                exact
-                component={Faculty}
-              />
+                <ProtectedRoute
+                  isLoggedin={state.isLoggedIn}
+                  path="/attendance"
+                  exact
+                  component={AttendanceDiv}
+                />
+                <ProtectedRoute
+                  isLoggedin={state.isLoggedIn}
+                  path="/timetable"
+                  exact
+                  component={TimeTable}
+                />
+                <ProtectedRoute
+                  isLoggedin={state.isLoggedIn}
+                  path="/faculty"
+                  exact
+                  component={Faculty}
+                />
 
-              <ProtectedRoute
-                isLoggedin={state.isLoggedIn}
-                path="/marks"
-                exact
-                component={MarksDiv}
-              />
-            </Switch>
-          </>
-        ) : (
-          <></>
-        )}
-      </TimeContext>
-      <Footer />
-    </Router>
+                <ProtectedRoute
+                  isLoggedin={state.isLoggedIn}
+                  path="/marks"
+                  exact
+                  component={MarksDiv}
+                />
+              </Switch>
+            </>
+          ) : (
+            <></>
+          )}
+        </TimeContext>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
