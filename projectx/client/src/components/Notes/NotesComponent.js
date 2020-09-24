@@ -9,7 +9,8 @@ export default function NotesCardComponent({ subjectName, imgurl }) {
       style={{
         boxShadow: " 0 10px 18px rgba(0,0,0,0.3), 0 10px 18px rgba(0,0,0,0.3)",
         borderRadius: "15px",
-        background: "black",
+        backgroundColor: " #55efc4",
+        backgroundImage: "linear-gradient(315deg, #55efc4 0%, #000000 89%)",
       }}
     >
       <div class='image'>

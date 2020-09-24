@@ -14,14 +14,15 @@ export default function Header() {
     <Navbar
       style={{
         backgroundColor: "black",
-        height: "70px",
-        position: "fixed",
-        width: "100%",
         zIndex: "500",
         boxShadow:
           "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
       }}
       expand='lg'
+      bg='dark'
+      variant='dark'
+      fixed='top'
+      collapseOnSelect
     >
       <Navbar.Brand style={{ color: "white" }} href='/'>
         CSE Dept
