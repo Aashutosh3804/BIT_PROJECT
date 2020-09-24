@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { AuthContext } from "../../context/Auth/auth";
@@ -10,6 +10,8 @@ export default function Header() {
   const handleLogout = () => {
     LogOut();
   };
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <Navbar
       style={{
@@ -19,54 +21,87 @@ export default function Header() {
           "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
       }}
       expand='lg'
-      bg='dark'
-      variant='dark'
       fixed='top'
-      collapseOnSelect='true'
+      variant='dark'
+      expanded={expanded}
     >
       <Navbar.Brand style={{ color: "white" }} href='/'>
         CSE Dept
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Toggle
+        aria-controls='basic-navbar-nav'
+        onClick={() => setExpanded(expanded ? false : "expanded")}
+      />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='mr-auto'>
-          <Nav.Link style={{ color: "white" }} to='/' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Home
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/timetable' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/timetable'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Time-Table
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/attendance' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/attendance'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Attendance
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/#' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/#'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Placements
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/marks' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/marks'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Marks
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/notes' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/notes'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Notes
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} to='/faculty' as={Link}>
+          <Nav.Link
+            style={{ color: "white" }}
+            to='/faculty'
+            as={Link}
+            onClick={() => setExpanded(false)}
+          >
             Faculty
           </Nav.Link>
-          <NavDropdown
-            style={{ backgroundColor: "white" }}
-            title='Information'
-            id='basic-nav-dropdown'
-          >
-            <NavDropdown.Item style={{ color: "white" }} href='#action/3.1'>
+          <NavDropdown title='Information' id='basic-nav-dropdown'>
+            <NavDropdown.Item style={{ color: "black" }} href='#action/3.1'>
               Notice Board
             </NavDropdown.Item>
-            <NavDropdown.Item style={{ color: "white" }} href='#action/3.2'>
+            <NavDropdown.Item style={{ color: "black" }} href='#action/3.2'>
               Club Activities
             </NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.3' style={{ color: "white" }}>
+            <NavDropdown.Item href='#action/3.3' style={{ color: "black" }}>
               Calender Of Events
             </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item style={{ color: "white" }} href='#action/3.4'>
+            <NavDropdown.Item style={{ color: "black" }} href='#action/3.4'>
               Contact us
             </NavDropdown.Item>
           </NavDropdown>
