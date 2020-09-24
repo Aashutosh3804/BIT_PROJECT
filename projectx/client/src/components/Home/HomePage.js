@@ -52,6 +52,7 @@ export default function HomePage() {
         </div>
         <br />
         <hr />
+        <br/>
         <div className='notice'>
           <div className='ClubCard'>
             <NewNotices />
