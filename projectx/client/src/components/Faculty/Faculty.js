@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Faculty.css";
 import axios from "axios";
+import "./Faculty.css";
 import { Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function Faculty() {
@@ -23,8 +23,8 @@ export default function Faculty() {
     } else {
       return (
         <>
-          <a className='header'>Publications:&nbsp;&nbsp;&nbsp;</a>
-          <a className='header'>{p}</a>
+          <a>Publications:&nbsp;&nbsp;&nbsp;</a>
+          <a>{p}</a>
           <br />
         </>
       );
@@ -40,37 +40,38 @@ export default function Faculty() {
   } else {
     return teachers.map((teacher) => {
       return (
-        <div
-          style={{
-            boxShadow: "3px 3px 3px",
-            marginTop: "100px",
-            padding: "50px",
-            height: "100%",
-            width: "100%",
-          }}
-        >
+        <div className="teacher1">
           <img
             src={teacher.img}
             style={{
               height: "100px",
               marginLeft: "20%",
+              marginRight: "10%",
               width: "100px",
               borderRadius: "100px",
               float: "left",
             }}
           />
-          <div style={{ marginLeft: "30%" }}>
-            <h5>{teacher.name}</h5>
+          <h5>{teacher.name}</h5>
 
-            <h5>{teacher.qualification}</h5>
-            <h5>{teacher.designation}</h5>
-            <h5>Experience:&nbsp;&nbsp;{teacher.experience}</h5>
-            <h5>Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}</h5>
+          <h5>{teacher.qualification}</h5>
+          <h5>{teacher.designation}</h5>
+          <h5 className="experience">
+            Experience:&nbsp;&nbsp;{teacher.experience}
+          </h5>
+          <h5 className="interest">
+            Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}
+          </h5>
 
-            <a className='header'>Emailid:&nbsp;{teacher.emailid}</a>
-            <h5>{publications(teacher.publications)}</h5>
-          </div>
+          <a style={{ color: "blue" }} className="interest">
+            Emailid:&nbsp;{teacher.emailid}
+          </a>
+          <h5 style={{ color: "blue" }} className="interest">
+            {publications(teacher.publications)}
+          </h5>
         </div>
+
+        // <div className="teacher1">
       );
     });
   }

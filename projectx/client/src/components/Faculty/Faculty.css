@@ -1,66 +1,25 @@
-.att {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 800;
-  display: block;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3), 0 10px 18px rgba(0, 0, 0, 0.3);
-  position: relative;
-  width: 68vw;
-  max-width: 95%;
-  height: 16vh;
-  margin: 1rem;
-  text-align: center;
+.teacher1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  width: 70%;
+  margin-top: 100px;
+  margin-left: 200px;
+  border-radius: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8);
 }
-#suggestion {
-  font-size: small;
-  height: 25%;
-  color: forestgreen;
+.interest {
+  margin-left: 39.5%;
 }
-#subject {
-  font-size: 2em;
-  padding-top: 0.8em;
-  float: left;
-  width: 50%;
-  border-right: 1px solid;
-  height: 75%;
-  border-bottom: 1px solid;
-}
-#attendence {
-  padding-top: 0.45em;
-  font-size: 2.8rem;
-  float: right;
-  width: 50%;
-  height: 75%;
-  border-bottom: 1px solid;
-}
-#subject.lab {
-  font-size: 1.9em;
-  padding-top: 0.8em;
-  float: left;
-  width: 50%;
-  border-right: 1px solid;
-  height: 75%;
-  border-bottom: 1px solid;
-  padding-top: 3%;
-}
-@media screen and (max-width: 700px) {
-  #suggestion {
-    height: 30%;
+
+@media (max-width: 600px) {
+  .teacher1 {
+    width: 100%;
+    margin-left: 0px;
   }
-  #subject {
-    height: 70%;
+  .experience {
+    margin-left: 40%;
   }
-  #attendence {
-    height: 70%;
-  }
-  #subject.lab {
-    font-size: 1.4em;
-    height: 70%;
-    padding-top: 12%;
-  }
-  .mine {
-    height: 10px;
-    width: 10px;
+  .interest {
+    margin-left: 0%;
   }
 }
