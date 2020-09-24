@@ -2,7 +2,6 @@ import React from "react";
 import "./marks.Component.css";
 export default function MarksComponent({ subject, marks }) {
   return (
-    <div className='all-container'>
       <div className='marks-container'>
         <div className='subject-khali'></div>
         <div className='internal-h'>I1</div>
@@ -13,6 +12,5 @@ export default function MarksComponent({ subject, marks }) {
         <div className='internal'>{marks[1]}</div>
         <div className='internal-l'>{marks[2]}</div>
       </div>
-    </div>
   );
 }
