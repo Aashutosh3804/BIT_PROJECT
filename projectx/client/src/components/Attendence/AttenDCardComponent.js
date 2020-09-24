@@ -14,14 +14,18 @@ export default function AttenDCardComponent({ present, total, subject }) {
   }
   return (
     <div className='att1'>
-      <div id='subject' className={hasLab ? "lab" : null}>{`${subject}`}</div>
-      <div id='attendence'>{`${percentage}`}%</div>
+      <div className="upper">
+      <div id='subject1' className={hasLab ? "lab" : null}>{`${subject}`}</div>
+      
+      <div id='attendence1'>{`${percentage}`}%</div>
+      </div>
       <div
         id='suggestion'
         style={{ color: percentage < 75 ? "red" : "forestgreen" }}
       >
         {suggestion}
       </div>
+     
     </div>
   );
 }

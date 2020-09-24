@@ -17,8 +17,8 @@ export default function Header() {
       style={{
         backgroundColor: "black",
         zIndex: "500",
-        // boxShadow:
-        //   "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
+        boxShadow:
+          "0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.8)",
         top:"0",
         borderBottomRightRadius:30,
         borderBottomLeftRadius:30
