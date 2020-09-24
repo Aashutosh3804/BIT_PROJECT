@@ -22,7 +22,7 @@ export default function Header() {
       bg='dark'
       variant='dark'
       fixed='top'
-      collapseOnSelect
+      collapseOnSelect='true'
     >
       <Navbar.Brand style={{ color: "white" }} href='/'>
         CSE Dept
