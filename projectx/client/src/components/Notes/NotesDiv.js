@@ -9,6 +9,17 @@ export default function NotesDiv() {
           <source src="/Nebula.mp4" type="video/webm" />
         </video>
       </div> */}
+      <div style={{ width: "100vw" }}>
+        <video
+          className="routineVideoOthers"
+          preload="auto"
+          loop
+          muted
+          autoPlay
+        >
+          <source src="/NebulaRed.mp4" type="video/webm" />
+        </video>
+      </div>
       <div className="all-container">
         <div
           id="notesDivParent"

@@ -11,7 +11,8 @@
   height: 55%;
   margin: 1rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid;
   /* opacity: 0.6; */
 }
 
