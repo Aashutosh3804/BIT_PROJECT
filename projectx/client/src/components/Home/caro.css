@@ -4,12 +4,43 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  height: 600px;
 }
+
 .subjectname {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 500px;
+
   margin: 50px;
   align-content: space-around;
   justify-content: space-around;
+}
+.subjectname h5 {
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+.carousel.slide {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .routine_item {
+    height: 45%;
+  }
+  .subjectname {
+    width: 220px;
+  }
+  .subjectname h5 {
+    font-size: 1.2rem;
+  }
+  .caroclass {
+    max-height: 300px;
+    margin-top: 50%;
+  }
+  .carousel.slide {
+    margin-top: 50%;
+  }
 }

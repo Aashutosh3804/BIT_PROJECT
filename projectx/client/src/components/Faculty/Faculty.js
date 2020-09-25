@@ -30,7 +30,85 @@ export default function Faculty() {
       );
     }
   };
+  const Fac = () => {
+    return teachers.map((teacher) => {
+      return (
+        <div className="teacher1">
+          <div className="facimage">
+            {/* <img
+              src={teacher.img}
+              style={
+                {
+                  height: "100px",
+                  marginLeft: "20%",
+                  marginRight: "10%",
+                  width: "100px",
+                  borderRadius: "100px",
+                  float: "left",
+                }
+              }
+            /> */}
+          </div>
+          <div className="facdetails">
+            <h5>{teacher.name}</h5>
 
+            <h5>{teacher.qualification}</h5>
+            <h5>{teacher.designation}</h5>
+            <h5 className="experience">
+              Experience:&nbsp;&nbsp;{teacher.experience}
+            </h5>
+            <h5 className="interest">
+              Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}
+            </h5>
+
+            <a style={{ color: "blue" }} className="interest">
+              Emailid:&nbsp;{teacher.emailid}
+            </a>
+            <h5 style={{ color: "blue" }} className="interest">
+              {publications(teacher.publications)}
+            </h5>
+          </div>
+        </div>
+      );
+    });
+  };
+  const myfaculty = () => {
+    return teachers.map((teacher) => {
+      return (
+        <div className="teacher1">
+          <div className="up">
+            <div className="facimage">
+              <img className="teacherimage" src={teacher.img} />
+            </div>
+            <div className="facdetails">
+              <h2>{teacher.name}</h2>
+            </div>
+            <br />
+          </div>
+          <div className="dacdetails1">
+            <h5>
+              {teacher.qualification}
+              <br />
+              {teacher.designation}
+              <br />
+              {teacher.experience}
+            </h5>
+          </div>
+          <br />
+          <div className="anotherdiv" style={{ wordWrap: "break-word" }}>
+            <h5>
+              Experience:&nbsp;&nbsp;{teacher.experience}
+              <br />
+              Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}
+              <br />
+              {publications(teacher.publications)}
+              Email {teacher.emailid}
+            </h5>
+          </div>
+        </div>
+      );
+    });
+  };
   if (!teachers) {
     return (
       <div>
@@ -38,41 +116,10 @@ export default function Faculty() {
       </div>
     );
   } else {
-    return teachers.map((teacher) => {
-      return (
-        <div className="teacher1">
-          <img
-            src={teacher.img}
-            style={{
-              height: "100px",
-              marginLeft: "20%",
-              marginRight: "10%",
-              width: "100px",
-              borderRadius: "100px",
-              float: "left",
-            }}
-          />
-          <h5>{teacher.name}</h5>
-
-          <h5>{teacher.qualification}</h5>
-          <h5>{teacher.designation}</h5>
-          <h5 className="experience">
-            Experience:&nbsp;&nbsp;{teacher.experience}
-          </h5>
-          <h5 className="interest">
-            Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}
-          </h5>
-
-          <a style={{ color: "blue" }} className="interest">
-            Emailid:&nbsp;{teacher.emailid}
-          </a>
-          <h5 style={{ color: "blue" }} className="interest">
-            {publications(teacher.publications)}
-          </h5>
-        </div>
-
-        // <div className="teacher1">
-      );
-    });
+    return (
+      <div className="all-container">
+        <div className="teachercontainer">{myfaculty()}</div>
+      </div>
+    );
   }
 }

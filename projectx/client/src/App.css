@@ -11,14 +11,16 @@ body {
   padding: 0;
 }
 .particles {
-  position: fixed;
-  background-color: #55efc4;
-  background-image: linear-gradient(315deg, #55efc4 0%, #000000 89%);
+  position: absolute;
+  /* background-color: #55efc4;
+  background-image: linear-gradient(315deg, #55efc4 0%, #000000 89%); */
 
-  /* background: URl("./static/wallpaperflare.com_wallpaper (2).jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat; */
-  top: 0;
+  /* background: URl("http://www.pptbackgrounds.org/uploads/space-backgrounds-wallpapers.jpg"); */
+  /* background-size: 100% 100%; */
+  background-repeat: no-repeat;
+  top: 140%;
+  height: 200%;
+  background-color: black;
   right: 0;
   bottom: 0;
   left: 0;
@@ -27,8 +29,20 @@ body {
 .all-container {
   padding-top: 7%;
 }
+.routineisVideo {
+  display: none;
+}
 @media (max-width: 600px) {
   .all-container {
     padding-top: 20%;
+  }
+  .routineisVideo {
+    position: fixed;
+    z-index: -500;
+    display: block;
+
+    width: 100%;
+    object-fit: fill;
+    height: 100%;
   }
 }
