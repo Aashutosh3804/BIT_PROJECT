@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Faculty.css";
 import { Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../Home/bgvideo.css";
 export default function Faculty() {
   const [teachers, setteachers] = useState();
   useEffect(() => {
@@ -81,12 +82,12 @@ export default function Faculty() {
               <img className="teacherimage" src={teacher.img} />
             </div>
             <div className="facdetails">
-              <h2>{teacher.name}</h2>
+              <h2 style={{ color: "white" }}>{teacher.name}</h2>
             </div>
             <br />
           </div>
           <div className="dacdetails1">
-            <h5>
+            <h5 style={{ color: "white" }}>
               {teacher.qualification}
               <br />
               {teacher.designation}
@@ -96,7 +97,7 @@ export default function Faculty() {
           </div>
           <br />
           <div className="anotherdiv" style={{ wordWrap: "break-word" }}>
-            <h5>
+            <h5 style={{ color: "white" }}>
               Experience:&nbsp;&nbsp;{teacher.experience}
               <br />
               Area of Interest:&nbsp;&nbsp;{teacher.area_of_interest}
@@ -117,9 +118,22 @@ export default function Faculty() {
     );
   } else {
     return (
-      <div className="all-container">
-        <div className="teachercontainer">{myfaculty()}</div>
-      </div>
+      <>
+        <div style={{ width: "100vw" }}>
+          <video
+            className="routineVideoOthers"
+            preload="auto"
+            loop
+            muted
+            autoPlay
+          >
+            <source src="/NebulaRed.mp4" type="video/webm" />
+          </video>
+        </div>
+        <div className="all-container">
+          <div className="teachercontainer">{myfaculty()}</div>
+        </div>
+      </>
     );
   }
 }

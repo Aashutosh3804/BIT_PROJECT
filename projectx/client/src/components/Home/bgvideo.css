@@ -6,10 +6,21 @@
   object-fit: fill;
   height: 100%;
 }
+.routineVideoOthers {
+  position: fixed;
+  z-index: -500;
+
+  width: 100%;
+  object-fit: fill;
+  height: 100vh;
+}
 
 @media (max-width: 600px) {
   .routineVideo {
     height: 60%;
+    display: none;
+  }
+  .routineVideoOthers {
     display: none;
   }
 }
