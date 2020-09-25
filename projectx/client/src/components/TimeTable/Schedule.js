@@ -22,6 +22,7 @@ export default function Schedule(props) {
         <h4
           style={{
             fontSize: "20px",
+            color: "white",
             textAlign: "center",
             top: "3%",
             fontWeight: "bold",

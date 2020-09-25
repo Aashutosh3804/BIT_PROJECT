@@ -19,27 +19,29 @@ class TimeTable extends React.Component {
             <source src="/NebulaRed.mp4" type="video/webm" />
           </video>
         </div>
-        <Carousel>
-          <Carousel.Item>
-            <Schedule day="monday" />
-          </Carousel.Item>
+        <center>
+          <Carousel auto interval="1000" pause="hover">
+            <Carousel.Item>
+              <Schedule day="monday" />
+            </Carousel.Item>
 
-          <Carousel.Item>
-            <Schedule day="tuesday" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Schedule day="wednesday" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Schedule day="thursday" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Schedule day="friday" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Schedule day="saturday" />
-          </Carousel.Item>
-        </Carousel>
+            <Carousel.Item>
+              <Schedule day="tuesday" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Schedule day="wednesday" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Schedule day="thursday" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Schedule day="friday" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Schedule day="saturday" />
+            </Carousel.Item>
+          </Carousel>
+        </center>
       </div>
     );
   }

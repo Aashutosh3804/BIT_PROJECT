@@ -53,6 +53,9 @@ export default function HomePage() {
               id="caroclass"
               activeIndex={index}
               onSelect={handleSelect}
+              auto
+              interval="1000"
+              pause="hover"
             >
               {Routine()}
             </Carousel>
