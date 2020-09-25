@@ -50,7 +50,7 @@ export default function HomePage() {
         ></div> */}
           <>
             <Carousel
-              class="caroclass"
+              id="caroclass"
               activeIndex={index}
               onSelect={handleSelect}
             >

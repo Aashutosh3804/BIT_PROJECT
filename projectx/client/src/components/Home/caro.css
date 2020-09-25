@@ -36,11 +36,8 @@
   .subjectname h5 {
     font-size: 1.2rem;
   }
-  .caroclass {
+  #caroclass {
     max-height: 300px;
-    margin-top: 50%;
-  }
-  .carousel.slide {
     margin-top: 50%;
   }
 }

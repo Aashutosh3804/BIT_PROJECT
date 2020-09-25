@@ -51,7 +51,7 @@ export default function Schedule(props) {
             return <div></div>;
           } else {
             return (
-              <li className='event' data-date={day.time}>
+              <li className="event" data-date={day.time}>
                 {subject(day.subject)}
                 {/* <h3 >{day.subject}</h3> */}
                 <p>{day.room}</p>
@@ -63,10 +63,10 @@ export default function Schedule(props) {
   };
 
   return (
-    <div id='content' style={{ paddingTop: "10%" }}>
+    <div id="content" style={{ paddingTop: "2%" }}>
       <h1>{props.day.toUpperCase()}</h1>
 
-      <ul className='timeline'>{data()}</ul>
+      <ul className="timeline">{data()}</ul>
     </div>
   );
 }
