@@ -4,23 +4,24 @@ import "./NotesComponent.css";
 export default function NotesCardComponent({ subjectName, imgurl }) {
   return (
     <div
-      class="ui card"
-      id="uiCard"
+      class='ui card'
+      id='uiCard'
       style={{
         boxShadow: " 0 10px 18px rgba(0,0,0,0.3), 0 10px 18px rgba(0,0,0,0.3)",
-        borderRadius: "15px",
+        borderRadius: "20px",
         backgroundColor: "black",
+        overflow: "hidden",
       }}
     >
-      <div class="image">
+      <div class='image'>
         <img src={imgurl}></img>
       </div>
-      <div class="contentNotes">
-        <span class="subName" style={{ color: "white" }}>
+      <div class='contentNotes'>
+        <span class='subName' style={{ color: "white" }}>
           <b>{subjectName}</b>
         </span>
       </div>
-      <div class="extra content" id="modulesBar">
+      <div class='extra content' id='modulesBar'>
         <a>M1</a>
         <a>&nbsp; &nbsp; &nbsp; M2</a>
         <a>&nbsp; &nbsp; &nbsp; M3</a>

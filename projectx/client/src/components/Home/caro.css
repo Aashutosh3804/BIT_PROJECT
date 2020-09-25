@@ -25,6 +25,11 @@
 .carousel.slide {
   margin-top: 0;
 }
+.welcome {
+  height: 100px;
+  width: 100%;
+  margin-top: 15%;
+}
 
 @media (max-width: 600px) {
   .routine_item {
@@ -39,5 +44,10 @@
   #caroclass {
     max-height: 300px;
     margin-top: 50%;
+  }
+  .welcome {
+    height: 350px;
+    width: 100%;
+    margin-top: 15%;
   }
 }
