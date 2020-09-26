@@ -39,6 +39,8 @@
   border-radius: 100px;
 }
 .teacher1 {
+  transition: transform 0.5s;
+
   height: auto;
   padding: 20px;
   width: 50%;
@@ -49,6 +51,16 @@
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid;
+
+  
+}
+
+.teacher1:hover {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
 }
 
 @media (max-width: 600px) {

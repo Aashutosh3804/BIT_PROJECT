@@ -14,7 +14,18 @@
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid;
   /* opacity: 0.6; */
+  transition: transform 0.5s;
+
 }
+
+.att1:hover {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
 
 .upper {
   display: flex;

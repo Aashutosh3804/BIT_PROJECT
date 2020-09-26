@@ -20,8 +20,8 @@ export default function AttendanceDiv() {
         <div id="attendanceDivKaBaap">
           <AttenDCardComponent subject={"DAA LAB"} present={12} total={18} />
           <AttenDCardComponent subject={"DAA"} present={17} total={18} />
-          <AttenDCardComponent subject={"DAA"} present={12} total={18} />
-          <AttenDCardComponent subject={"DAA"} present={12} total={18} />
+          <AttenDCardComponent subject={"OS"} present={12} total={18} />
+          <AttenDCardComponent subject={"CO"} present={12} total={18} />
         </div>
       </div>
     </>
